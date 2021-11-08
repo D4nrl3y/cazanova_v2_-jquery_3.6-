@@ -1,0 +1,21 @@
+<div class="help-box">
+    <input type="checkbox" id="{{ forLabel }}" checked>
+    <label for="{{ forLabel }}">
+        <span class="icon icon-help"></span>Precisa de ajuda?
+    </label>
+    <div class="overflow">
+        {% if settings.whatsapp_number %}
+        {% set whats = settings.whatsapp_number %}
+        {% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+        <a class="text" target="_blank" href="{{ 'https://api.whatsapp.com/send?l=pt&phone=55'~ link }}" rel="noreferrer noopener">
+            <span class="icon icon-whatsapp"></span><span class="decoration">Tire suas dúvidas via WhatsApp</span>
+        </a>
+        {% endif %}
+        <a href="{{ links.contact }}" class="text">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path d="M4.688 7.93H3.144A6.876 6.876 0 0 1 16.45 6.052a.781.781 0 0 0 1.465-.542A8.438 8.438 0 0 0 1.564 8.349 3.126 3.126 0 0 0 0 11.055v2.656a3.129 3.129 0 0 0 3.125 3.125h1.563a.781.781 0 0 0 .781-.781V8.711a.781.781 0 0 0-.781-.781zm-.781 7.344h-.782a1.564 1.564 0 0 1-1.562-1.562v-2.657a1.564 1.564 0 0 1 1.562-1.563h.781z" />
+                <path d="M224.438 203h-1.562a.781.781 0 0 0-.781.781v8.164a.782.782 0 0 1-.781.781h-2.384v.025a1.563 1.563 0 1 0 0 1.513v.025h2.383a2.346 2.346 0 0 0 2.344-2.344v-.039h.781a3.129 3.129 0 0 0 3.125-3.125v-2.656a3.129 3.129 0 0 0-3.125-3.125zm1.562 5.781a1.564 1.564 0 0 1-1.562 1.563h-.781v-5.781h.781a1.564 1.564 0 0 1 1.562 1.562z" transform="translate(-207.563 -195.07)"/>
+            </svg><span class="decoration">Central de atendimento</span>
+        </a>
+    </div>
+</div>

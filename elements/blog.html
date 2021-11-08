@@ -1,0 +1,45 @@
+{% set blogActive = true %}
+    {% for custom in pages.custom %}
+    {% if custom.info == 'noticias' %}
+    {% set blogActive = true %}
+    {% endif %}
+{% endfor %}
+{% if blogActive %}
+<div class="section-blog container section-show">
+    {% element 'snippets/area-title' {
+        'info': {
+            'title': 'Dicas e notícias para você!',
+            'name': 'Blog',
+            'linkHref': 'https://www.cazanovaconstrucao.com.br/loja/busca_noticias.php',
+            'linkText': 'Ver todas'
+        }
+    } %}
+    <div class="list-posts">
+        <div class="box-noticia">
+            <div id="noticia_imagem"></div>
+            <div id="noticia_dados">
+                <div class="date"></div><div class="title"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="see-all-mobile">
+        <a href="https://www.cazanovaconstrucao.com.br/loja/busca_noticias.php" class="flex align-center">
+            <span>Ver todas</span>
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <defs><clipPath><path fill="#004498" stroke="#fff" stroke-width="0.8px" d="M0 0H16V16H0z" transform="translate(1597.498 2058.499)"/></clipPath><style>.arrow-ic-blue-3{fill:#004498}
+                    </style></defs><g transform="translate(-1597.498 -2058.499)"><g transform="translate(1597.498 2058.5)"><path d="M12.427 23.494a8 8 0 1 0-8-8.017 8.012 8.012 0 0 0 8 8.017zm.034-1.455a6.544 6.544 0 1 1 6.511-6.647 6.556 6.556 0 0 1-6.511 6.647z" class="arrow-ic-blue-3" transform="translate(-4.429 -7.496)"/><path d="M11.6 14.561l-1.98 1.983c-.381.382-.765.761-1.143 1.146a.727.727 0 0 0 .41 1.244.731.731 0 0 0 .644-.241q1.324-1.326 2.65-2.65l.9-.9a.724.724 0 0 0 0-1.1q-1.781-1.79-3.561-3.571A.729.729 0 0 0 8.246 11a.811.811 0 0 0 .271.533q1.454 1.449 2.905 2.9a1.476 1.476 0 0 0 .178.128z" class="arrow-ic-blue-3" transform="translate(-2.425 -6.587)"/></g></g>
+                </svg>
+            </div>
+        </a>
+    </div>
+
+    {#<div class="flex justify-center">
+        <a class="button{{ utils.is_mobile ? ' transparent' }}" href="/loja/busca_noticias.php">
+            Ver todas
+        </a>
+    </div>#}
+    
+</div>
+{% endif %}

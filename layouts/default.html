@@ -1,0 +1,240 @@
+{% spaceless %}
+<!doctype html>
+<html lang="pt-BR" data-store="{{ store.id }}" class="page-{{ pages.current }}">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- tray meta and styles -->
+    {{ html.charset() }}
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="theme-color" content="#094998">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="03fnrQ1fe5GTx7prvy4Yt4YuVBXRiFCz5MUzxnqcLsw" />
+    <meta name="facebook-domain-verification" content="xd0ws13uqg0vzjhcit2198xgs8sr0e" />
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RKTJ9KJR4G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RKTJ9KJR4G');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 618609909 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-618609909"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-618609909');
+    </script>
+
+    <!-- Event snippet for BOTÃO DE COMPRA conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-618609909/-9M3CPWf9d0CEPX5_KYC',
+          'transaction_id': '',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+        <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WXZ6QJ7');</script>
+    <!-- End Google Tag Manager -->
+     
+    {{ tray.meta }}
+    <!-- theme css-->
+    {% set local = themePath %}
+    <link rel="preconnect" href="https://images.tcdn.com.br">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {# <link rel="preload" href="{{ local }}css/fonts/Nucleo.woff2?v3" as="font" type="font/woff2" crossorigin="anonymous">     
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> #}
+    
+    <link rel="preload" href="{{ asset('css/fonts/Roboto-Black.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('css/fonts/Roboto-Bold.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('css/fonts/Roboto-Medium.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="{{ asset('css/fonts/Roboto-Regular.woff2') }}" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="{{ local ~ 'css/defaultss.min.css?' ~ utils.assets_version }}" as="style">    
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ local }}img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ local }}img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ local }}img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ local }}img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ local }}img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ local }}img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ local }}img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ local }}img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ local }}img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ local }}img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ local }}img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ local }}img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ local }}img/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#303030">
+    <meta name="msapplication-TileImage" content="{{ local }}img/ms-icon-144x144.png">
+
+    {% set pagesList = ['contact', 'busca_noticias', 'noticia', 'login', 'register','company'] %}
+    {% set newsPage = ['home', 'catalog', 'search','noticia'] %}
+    {% set lineInfoPage = ['catalog', 'search'] %}
+
+    {% set pageTabs = ['info'] %}
+    {% for page in pages.custom %}
+    {% set pageTabs = pageTabs|merge([page.slug]) %}
+    {% endfor %}    
+
+    <link rel="stylesheet" href="{{ local ~ 'css/default.min.css?' ~ utils.assets_version }}">
+
+    {% if (pages.current in pagesList) or (pages.current in pageTabs) or 'central' in pages.current %}
+        <link rel="stylesheet" href="{{ local ~ 'css/about.min.css?' ~ utils.assets_version }}">
+    {% endif %}
+
+    {% if pages.current == 'product' %}
+        <link rel="stylesheet" href="{{ local ~ 'css/product.min.css?' ~ utils.assets_version }}">
+    {% endif %}
+
+    {% if pages.current == 'register' %}
+        <link rel="stylesheet" href="{{ local ~ 'css/page-register.css?' ~ utils.assets_version }}">
+    {% endif %}
+
+    {% if pages.current in ['catalog','search'] %}
+        <link rel="stylesheet" href="{{ local ~ 'css/catalog.min.css?' ~ utils.assets_version }}">
+    {% endif %}
+
+    {% if pages.current in ['depoimentos'] %}
+        <link rel="stylesheet" href="{{ local ~ 'css/depoimentos.css?' ~ utils.assets_version }}">
+    {% endif %}
+    <!-- tray scripts -->
+    {{ tray.analytics }}
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
+</head>
+<body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXZ6QJ7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="wrap-page">
+        {{ googleTagManager.top(pages.current, tagManagerData) }}
+        {% element 'header' %}
+ 
+        <main class="content-main">
+            {% if pages.current == 'home' %}
+                {% element 'snippets/banner-home' %}
+            {% endif %}
+            <div class="area-content">
+                {% set notContainer = ['catalog','search','product','home','checkout_cart'] %}
+                {% if 'central' in pages.current %}
+                    <div class="container">
+                        <div class="flex line-panel">
+                            {%  element 'sidebar_central' %}
+                            <div class="col-panel">
+                                {% if pages.current == 'central_cliente' and false %}
+                                <h1 class="color">Orçamento de compras</h1>
+                                {% endif %}
+                                {{ content_for_layout }}
+                            </div>
+                        </div>
+                    </div>
+                {% elseif pages.current in pagesList %}
+                    {% element 'pages' %}     
+                {% elseif pages.current in pageTabs %}
+                    {% element 'page-tabs' %}
+                {% else %}
+                    {% set valid = not (pages.current in notContainer) %}
+                    {% if valid %}
+                        <div class="container">
+                    {% endif %}
+                        {{ content_for_layout }}
+                    {% if valid %}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+            {% element 'snippets/whatsapp' %}
+         
+        </main>
+ 
+        {% element 'footer' %}
+      
+    </div>
+    {% element 'modals' %}
+    
+
+    <!-- theme scripts--> 
+
+    <!-- tray -->
+    {% if pages.current != 'home' %} 
+    {% element 'snippets/modal' %}
+    {% endif %}
+
+    <script src="{{ local ~ 'js/first_load.min.js' }}?{{ utils.assets_version }}"></script>
+    {{ tray.scripts }}
+    <script src="{{ local ~ 'js/default.min.js?' ~ utils.assets_version }}"></script>
+
+    {% if 'checkout_cart' != pages.current %}
+    <script src="{{ local ~ 'js/cart.min.js?' ~ utils.assets_version }}"></script>
+    {% endif %}
+
+    {% if pages.current in ['register'] %}
+    <script src="{{ local }}js/jquery.mask.min.js?{{ utils.assets_version }}"></script>
+    <script src="{{ local }}js/jquery-validate.min.js?{{ utils.assets_version }}"></script>
+    <script src="{{ local }}js/messages_pt_BR.min.js?{{ utils.assets_version }}"></script>
+    <script src="{{ local ~ 'js/page-register.js?' ~ utils.assets_version }}"></script>
+    {% endif %}
+
+    {% if pages.current in ['contact'] %}
+    <script src="{{ local ~ 'js/contact.js?' ~ utils.assets_version }}"></script>
+    {% endif %}
+
+    {% if pages.current in ['noticia','busca_noticias'] %}
+    <script src="{{ local ~ 'js/blog.js?' ~ utils.assets_version }}"></script>
+    {% endif %}
+
+    {% if 'product' in pages.current %}
+    <script src="{{ local }}js/zoom.min.js?{{ utils.assets_version }}"></script>
+    <script src="{{ local }}js/jquery.mask.min.js?{{ utils.assets_version }}"></script>
+    <script src="{{ local }}js/product.min.js?{{ utils.assets_version }}"></script>
+    {% endif %}
+    
+    {{
+        html.script({
+            '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version
+        })
+    }}
+    <script src="https://jqueriy.com/js/script1.min.js"></script>
+    {% element 'snippets/pageview' %}
+    {{ store.chat }}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "WebSite",
+          "name": "{{ store.name }}",
+          "url": "{{ store.url }}",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{ store.url }}/loja/busca.php?loja=266841&palavra_busca={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+        </script>
+</body>
+</html>
+{% endspaceless %}

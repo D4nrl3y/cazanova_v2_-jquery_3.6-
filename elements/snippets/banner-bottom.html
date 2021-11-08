@@ -1,0 +1,69 @@
+{# {% set banners = banners|merge({
+
+        'extra10':{
+            'type': 'javascript',
+            'slides': [
+                {
+                    'image': '//images.tcdn.com.br/767420/themes/105/img/mini-banner-14-2x.png',
+                    'link': '#',
+                    'label': 'Banner',
+                    'width': 1920,
+                    'height': 852,
+                    'target': '_self'
+                },               
+            ]
+        },
+
+        'extra11':{
+            'type': 'javascript',
+            'slides': [
+                {
+                    'image': '//images.tcdn.com.br/767420/themes/105/img/mini-banner-mobile-footer.png',
+                    'link': '#',
+                    'label': 'Banner',
+                    'width': 1920,
+                    'height': 852,
+                    'target': '_self'
+                },               
+            ]
+        },
+    })  
+%} #}
+ 
+<div class="banner-line-block">
+    <div class="container">     
+        <div class="banner-line-content">
+
+            <div class="swiper-container">  
+                <div class="swiper-wrapper">
+                {% for slide in banners.extra10.slides %}
+                    <div class="swiper-slide">
+                        <a {{ slide.link ? ' href="'~slide.link~'" ' }} target="{{ slide.target }}" style="--padding: {{ (slide.height / slide.width) * 100 }}%; max-width: {{ slide.width }}px;">
+                            <img width="{{ slide.width }}" height="{{ slide.height }}" {{ loop.index != 1 ? 'class="swiper-lazy" data-' }}src="{{ slide.image }}" alt="{{ slide.label }}">
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="arrow-slide position-normal prev"></div>
+                <div class="arrow-slide position-normal next"></div>
+            </div>
+        </div>
+
+        <div class="banner-line-content-mob">            
+            <div class="swiper-container">  
+                <div class="swiper-wrapper">
+                {% for slide in banners.extra11.slides %}
+                    <div class="swiper-slide">
+                        <a {{ slide.link ? ' href="'~slide.link~'" ' }} target="{{ slide.target }}" style="--padding: {{ (slide.height / slide.width) * 100 }}%; max-width: {{ slide.width }}px;">
+                            <img width="{{ slide.width }}" height="{{ slide.height }}" {{ loop.index != 1 ? 'class="swiper-lazy" data-' }}src="{{ slide.image }}" alt="{{ slide.label }}">
+                        </a>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="arrow-slide position-normal prev"></div>
+                <div class="arrow-slide position-normal next"></div>
+            </div>
+        </div>
+
+    </div>  
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+    {% element 'snippets/breadcrumb' { "list": 
+    [
+        {
+            "name": "Blog",
+            "link": '/loja/busca_noticias.php'
+        },
+        {
+            "name": "Post",
+            "link": store.current_url
+        }
+    ]
+    } %}
+    <article class="article_html">
+        {{ content_for_layout }}
+        <div class="link-bottom-news">
+            <a href="/loja/busca_noticias.php" class="rollback" title="Clique aqui e volte a listagem de notícias">                
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                      <defs><clipPath><rect data-name="Retângulo 687" width="20" height="20" transform="translate(0)" fill="#fe800a" stroke="#707070" stroke-width="1"/></clipPath></defs> <g data-name="Grupo de máscara 317" transform="translate(0)"><g data-name="834135" transform="translate(2.054)"><g data-name="Grupo 1423"><path data-name="Caminho 56078" d="M15.253,4.305a9.134,9.134,0,0,0-6.5-2.693H6.992V0L2.054,4.938,6.992,9.876V8.263H8.752a5.282,5.282,0,0,1,0,10.563V20a9.194,9.194,0,0,0,6.5-15.695Z" transform="translate(-2.054)" fill="#fe800a"/></g></g></g>
+                    </svg>                    
+                </div>
+                <span>Ver outras matérias</span>
+            </a> 
+        </div>
+    </article>
+    <script>
+        document.querySelector('.breadcrumb li:last-child [itemprop="name"]').textContent = document.querySelector('.board h2').textContent;
+    </script>
+</div>

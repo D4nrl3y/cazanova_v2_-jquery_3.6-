@@ -1,0 +1,144 @@
+/* depoiment */
+
+.area-content{
+    display: flex;
+    flex-direction: column;
+}
+
+hr{
+    display: none;
+}
+
+.area-content >.container3:first-of-type{
+    order: -1;
+}
+.area-content > .board{
+    order: -1;
+}
+
+#depoimento input:not([type="radio"]){
+    height: 48px;
+    border-radius: 3px;
+    border: solid 1px #e5e5e5;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 0 9px;
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+
+}
+
+#depoimento textarea{
+    border-radius: 3px;
+    border: solid 1px #e5e5e5;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 14px 9px;
+    width: 100% !important;
+    display: block;
+    margin: 4px 0 6px;
+    
+}
+
+.editDep{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+}
+
+.editDep > li{
+    width: calc(calc(100% - calc(16px * 3)) / 3);
+    min-height: 199px;
+    border-radius: 3px;
+    background-color: #fcfafa;
+    padding: 32px;
+    padding-top: 48px;
+    margin: 0 8px 24px;
+    position: relative;
+}
+
+.editDep h3{
+    font-size: 14px;
+    order: 2;
+    margin-top: 4px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    text-indent: -46px;
+}
+
+.editDep ul li:first-child{
+    font-size: 0;
+    order: 3;
+    margin: 8px 0 16px;
+}
+
+.editDep ul li:first-child::before{
+    content: '\ea2f  \ea2f  \ea2f  \ea2f  \ea2f';
+    font-family: 'Nucleo';
+    font-size: 10px;
+    color: #ffd700;
+    display: block;
+}
+
+
+.editDep ul li:nth-child(2){
+    font-size: 10px;
+    font-weight: 300;
+    order: 1;
+    overflow: hidden;
+    position: relative;
+    text-indent: -85px;
+    color: #aaa099;
+    position: absolute;
+    top: 32px;
+}
+
+.editDep ul li:nth-child(3){
+    font-size: 14px;
+    order: 4;
+    margin-top: 10px;
+    line-height: 1.21;
+}
+
+h2.color{
+    display: none;
+}
+
+hr + .board{
+    display: none;
+}
+
+#comentario_cliente{
+    max-width: 100%;
+    width: 550px;
+    margin: 0 auto 52px;
+}
+
+#comentario_cliente label{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#comentario_cliente .button{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.content-main{
+    margin-bottom: 52px;
+}
+
+@media (max-width: 1024px) {
+    .editDep > li{
+        width: calc(calc(100% - calc(16px * 2)) / 2);
+    }
+}
+
+@media (max-width: 550px) {
+    .editDep > li{
+        width: calc(calc(100% - calc(16px * 1)) / 1);
+    }
+}
+

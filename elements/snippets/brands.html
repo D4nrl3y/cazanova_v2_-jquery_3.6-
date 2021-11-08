@@ -1,0 +1,25 @@
+{% if settings.brands_active %}
+<div class="section-brands">
+    <div class="list slide-brand">
+        {% for i in 1..12 %}
+            {% set brandLink = attribute(settings, 'link_marca_'~i) %}
+            {% set brandImg = attribute(settings, 'brand_'~i) %}
+            {% if brandImg %}
+                {% if loop.index == 1 %}
+                <div class="item">
+                    <a {{ brandLink ? 'href="'~brandLink~'"' }} class="box-brand">
+                        <img class="lazy-first-brand" src="{{ asset('img/square.png') }}" data-src="{{ themePath }}{{ brandImg }}" alt="Brand">
+                    </a>
+                </div>
+                {% else %}
+                <div class="item">
+                    <a {{ brandLink ? 'href="'~brandLink~'"' }} class="box-brand">
+                        <img class="lazy-brand" src="{{ asset('img/square.png') }}" data-src="{{ themePath }}{{ brandImg }}" alt="Brand">
+                    </a>
+                </div>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,36 @@
+{% set listItems = not utils.is_mobile ? desk.slides : mob.slides %}
+{% if listItems %}
+<div class="bg-banners">
+    <div class="container">
+        {% if not utils.is_mobile %}
+        <div class="banners-grid flex">
+            {% for list in listItems %}
+            <div class="item">
+                {% element 'snippets/banner' {
+                    'b': list,
+                    'swiperLazy': utils.is_mobile
+                } %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if utils.is_mobile %}
+        <div class="banners-mob-list">
+            <div class="sample-container">
+                {% for list in listItems %}
+                <div class="item">
+                    {% element 'snippets/banner' {
+                        'b': list,
+                        
+                    } %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {# <div class="swiper-pagination">'swiperLazy': utils.is_mobile
+            <span class="swiper-pagination-bullet"></span>
+        </div> #}
+        {% endif %}
+    </div>
+</div>
+{% endif %}

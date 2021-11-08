@@ -1,0 +1,71 @@
+{% set promotion = itemProduct.price_offer > 0 %}
+{% set seals = promotion or itemProduct.featured %}
+
+{% set down = not horizontal and itemProduct.stock > 0 %}
+<div class="product{{ horizontal ? ' horizontal' }}{{ down ? ' down' }}">
+    {% if isOrder %}
+    <div class="tag-order"><span class="icon icon-arrow-right"></span>Mais vendido<span class="icon icon-arrow-right"></span></div>
+    {% endif %}
+    <div class="area-image">
+        <a href="{{ itemProduct.link }}" class="image">
+            <img width="180" height="180" class="{{ slide ? 'swiper-lazy' : 'lazyload' }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjwAsAAB4AAdpxxYoAAAAASUVORK5CYII=" data-src="{{ itemProduct.images[0].large }}" alt="{{ itemProduct.name }}" />
+            {% if itemProduct.images[1].large and false %}
+            <img class="second {{ horizontal or not slide ? 'lazyload' }}{{ slide and not horizontal ? 'swiper-lazy' }}" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjwAsAAB4AAdpxxYoAAAAASUVORK5CYII=" data-src="{{ itemProduct.images[1].large }}" alt="{{ itemProduct.name }}" />
+            {% endif %}
+            {% if seals %}
+            {% set loop = true %}
+            <span class="seals">
+                {# {% if promotion and loop %}
+                    <span class="seal promotion"><span>OFERTA</span></span>
+                    {% set loop = false %}
+                {% endif %} #}
+
+                {% if itemProduct.price_offer %}
+                    {% set porcentagemDesconto = 100 - ( itemProduct.price_offer / itemProduct.price ) * 100 %}
+                    {% if porcentagemDesconto < 100 %}
+                        {% if porcentagemDesconto|number_format > settings.valor_desconto_minimo %}
+                        <div class="seal promotion">{{ porcentagemDesconto|number_format }}% OFF</div>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+
+                {% if itemProduct.featured and loop %}
+                    <span class="seal featured">Destaque</span>
+                {% endif %}
+                
+            </span>
+            {% endif %}
+        </a>
+    </div>
+   
+    <div class="info">
+        <a href="{{ itemProduct.link }}">
+            <span class="name">{{ itemProduct.name }}</span>
+            <div class="raking-area">
+                {% element 'snippets/ranking' {
+                    'ranking': itemProduct.ranking,
+                    'total': true
+                } %}
+            </div> 
+            
+            {# {% if itemProduct.category_id == 317 %} #}
+            {% if (itemProduct.properties[0].name == 'Metro') %} 
+                <div class="metro-quadrado">
+                    <input type="hidden" name="caracteristica-metro" class="caracteristica-metro" value="{{ itemProduct.properties[0].value }}">
+                    <input type="hidden" name="caracteristica-metro-second" class="caracteristica-metro-second" value="{{ itemProduct.properties[0].value }}">
+                    {% if (itemProduct.price_offer == 0) %}
+                        <input type="hidden" name="valor-caixa" class="valor-caixa" value="{{ itemProduct.price }}">
+                    {% else %}
+                        <input type="hidden" name="valor-caixa" class="valor-caixa" value="{{ itemProduct.price_offer }}">
+                    {% endif %}
+                    {% element 'snippets/price' {'product': itemProduct} %}
+                </div>
+            {% else %}
+                {% element 'snippets/price' {'product': itemProduct} %}
+            {% endif %}
+            
+        </a>
+        
+    </div>
+    <a href="{{ itemProduct.link }}" class="button">Ver detalhes</a>
+</div>

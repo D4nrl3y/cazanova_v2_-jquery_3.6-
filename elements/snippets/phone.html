@@ -1,0 +1,14 @@
+{% set tel = phone %}
+{% if tel %}
+{% set tellink = tel|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+<a href="tel:{{ tellink }}" class="item">
+	<div class="icon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76">
+		  <g transform="translate(-576 -1686)"><rect width="62" height="62" rx="31" transform="translate(583 1693)" fill="#fe800a"/><rect data-name="bg" width="76" height="76" rx="38" transform="translate(576 1686)" fill="#fe800a" opacity="0.2"/><path d="M18.5,5.967a6.571,6.571,0,0,1,5.191,5.191M18.5.711A11.827,11.827,0,0,1,28.951,11.145M27.637,21.632v3.942A2.628,2.628,0,0,1,24.772,28.2a26.007,26.007,0,0,1-11.341-4.034,25.626,25.626,0,0,1-7.885-7.885A26.007,26.007,0,0,1,1.512,4.89,2.628,2.628,0,0,1,4.127,2.025H8.07A2.628,2.628,0,0,1,10.7,4.285a16.874,16.874,0,0,0,.92,3.693,2.628,2.628,0,0,1-.591,2.773L9.357,12.42A21.026,21.026,0,0,0,17.242,20.3l1.669-1.669a2.628,2.628,0,0,1,2.773-.591,16.873,16.873,0,0,0,3.693.92A2.628,2.628,0,0,1,27.637,21.632Z" transform="translate(598.479 1709.672)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/></g>
+		</svg>
+	</div>
+    <div class="text">{{ text }}</div>
+    <p class="desc">{{ desc }}</p>
+    <div class="value">{{ tel }}</div>
+</a>
+{% endif %}

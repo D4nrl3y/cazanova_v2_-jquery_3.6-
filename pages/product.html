@@ -1,0 +1,362 @@
+{% set bundle = productHelper.bundle() %}
+
+{% for discount in ProgressiveDiscounts %}
+{% if discount.banner and false %}
+    <img src="{{ discount.banner }}" alt="{{ discount.name }}"/>  
+{% endif %}
+{% endfor %}
+
+<div class="product-wrapper">
+    {% if (product.stock > 0 or not product.upon_request) %}
+    <div class="bar-fixed">
+        <div class="container">
+            <div class="image">
+                <img src="{{ product.images[0].large }}" alt="{{ product.name }}">
+            </div>
+            <div class="info-bar">
+                <div class="name">{{ product.name }}</div>
+                <div class="ranking-fixed">
+                    {% element 'snippets/ranking' {
+                        'ranking': product.ranking,
+                        'total': true
+                    } %}
+                </div>
+            </div>
+            <div class="flex justify-between right">
+                {% element 'snippets/price' {'product': product} %}
+                <span class="item-ver-mais">ver mais</span>
+                {# <div class="qnt-bar">
+                    <div class="button-increment dec" role="button" tabindex="0" data-js="decrement-bar"></div>
+                    <input class="input-qnt" value="1">
+                    <div class="button-increment" role="button" tabindex="0" data-js="increment-bar">
+                        <span class="icon icon-increment"></span>
+                    </div>
+                </div> #}
+                <div tabindex="0" role="button" class="button green">                    
+                    <span data-text="Comprar Agora" data-mob="Adicionar"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="container">
+        {% set breadcrumb = breadcrumb ? breadcrumb : [] %}
+        {% set breadcrumb = breadcrumb|merge([{
+            'name': product.name,
+            'link': product.link
+        }]) %}
+        {% element 'snippets/breadcrumb' { "list": breadcrumb} %}
+        {% element 'schema' %}
+            <div class="cols-info">                
+                <div class="col-image">
+                    {% element 'snippets/gallery' {'product': product } %}      
+
+                    {# {% if product.category_id == 317 and product.available %} #}
+                    {% if product.properties['Metro'] and product.available %}
+                        <div class="shares-product">
+                            Compartilhe:
+                            <div class="buttons">
+
+                                <a title="Clique aqui e compartilhe pelo facebook" href="javascript:;" data-href="https://www.facebook.com/sharer/sharer.php?u={{ product.link|url_encode }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="12" fill="#3b5998"/>
+                                        <path fill="#fcfcfc" d="M44.74 29.577H42.6v7.845h-3.245v-7.845h-1.543v-2.756h1.543v-1.785a3.042 3.042 0 0 1 3.273-3.273l2.4.01v2.676h-1.741a.66.66 0 0 0-.688.751v1.623h2.424l-.283 2.754z" transform="translate(-29.724 -17.108)"/>
+                                    </svg>
+                                </a>
+
+                                <a title="Clique aqui e compartilhe pelo Twitter" href="javascript:;" data-href="https://twitter.com/share?url={{ product.link|url_encode }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="12" fill="#2aa9e0"/>
+                                        <path fill="#fcfcfc" d="M39.084 35.373a5.723 5.723 0 0 1-1.648.451 2.876 2.876 0 0 0 1.264-1.586 5.742 5.742 0 0 1-1.821.7 2.871 2.871 0 0 0-4.888 2.617 8.142 8.142 0 0 1-5.912-3 2.871 2.871 0 0 0 .888 3.83 2.848 2.848 0 0 1-1.3-.359v.036a2.87 2.87 0 0 0 2.3 2.812 2.88 2.88 0 0 1-1.3.05 2.871 2.871 0 0 0 2.679 1.992A5.79 5.79 0 0 1 25.1 44.1a8.157 8.157 0 0 0 12.558-6.873c0-.124 0-.248-.008-.371a5.817 5.817 0 0 0 1.434-1.483z" transform="translate(-19.733 -26.749)"/>
+                                    </svg>
+                                </a>
+
+                                <a href="//www.pinterest.com/pin/create/button/" class="pin-it-button" target="_blank" count-layout="none" rel="noreferrer noopener">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <g transform="translate(-0.001 -0.002)"><circle data-name="Elipse 180" cx="12" cy="12" r="12" transform="translate(0.001 0.002)" fill="#e60023"/><path data-name="Caminho 61346" d="M35.765,35.4a4.058,4.058,0,0,1-2-.952c-.391,2.052-.869,4.018-2.284,5.046-.437-3.1.641-5.43,1.142-7.9-.854-1.437.1-4.331,1.9-3.618,2.217.877-1.919,5.345.857,5.9,2.9.583,4.082-5.03,2.284-6.855-2.6-2.636-7.56-.06-6.95,3.713.149.922,1.1,1.2.381,2.475-1.662-.368-2.158-1.679-2.094-3.427a5.594,5.594,0,0,1,5.046-5.142c3.131-.35,6.069,1.15,6.474,4.094.456,3.324-1.413,6.923-4.761,6.664Z" transform="translate(-22.796 -19.33)" fill="#fcfcfc"/></g>
+                                    </svg>
+                                </a>
+
+                                <a title="Clique aqui e compartilhe pelo Whatsapp" target="_blank" href="https://wa.me/?text={{ product.link|url_encode }}" rel="noreferrer noopener">                                
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <g transform="translate(-0.001 -0.002)"><circle data-name="Elipse 180" cx="12" cy="12" r="12" transform="translate(0.001 0.002)" fill="#26d366"/>
+                                        <g data-name="whatsapp-(1)" transform="translate(4.752 5.002)"><path data-name="Caminho 61347" d="M12.153,2.035A6.939,6.939,0,0,0,1.234,10.405L.25,14l3.678-.965a6.93,6.93,0,0,0,3.315.844h0A6.94,6.94,0,0,0,12.153,2.035ZM7.246,12.708h0a5.759,5.759,0,0,1-2.935-.8l-.21-.125-2.182.573L2.5,10.224l-.137-.218a5.766,5.766,0,1,1,4.885,2.7ZM10.408,8.39c-.173-.087-1.026-.506-1.185-.564s-.274-.087-.39.087-.448.564-.549.68-.2.13-.376.043a4.735,4.735,0,0,1-1.394-.86,5.229,5.229,0,0,1-.964-1.2c-.1-.174,0-.258.076-.354a4.9,4.9,0,0,0,.433-.593.319.319,0,0,0-.015-.3c-.043-.087-.39-.94-.534-1.287s-.284-.292-.39-.3-.217-.006-.332-.006a.637.637,0,0,0-.462.217A1.944,1.944,0,0,0,3.721,5.4a3.372,3.372,0,0,0,.708,1.793A7.726,7.726,0,0,0,7.39,9.807a9.918,9.918,0,0,0,.988.365,2.376,2.376,0,0,0,1.092.069,1.786,1.786,0,0,0,1.17-.824,1.448,1.448,0,0,0,.1-.824c-.043-.072-.159-.116-.332-.2Zm0,0" fill="#fcfcfc" fill-rule="evenodd"/></g>
+                                        </g>
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </div>   
+                    {% endif %}
+
+                </div>
+                <div class="col-shop {{ product.available == false ? 'indisponivel' }}" data-item-tab="O Produto">
+                    <div class="col-info" data-category="{{  product.properties['Metro']  ? 'metro-category' }}"> 
+                            {# <div class="dis">                          
+                                {% if product.stock > 0 %}
+                                <div class="icon icon-checked"></div>
+                                <div>
+                                    <div class="text">Disponibilidade</div>
+                                    <div class="subtext">A pronta entrega</div>
+                                </div>
+                                {% else %}
+                                <svg class="icon" fill="#e01b1b" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                    <path d="M15.333 7.333a.667.667 0 0 0-.666.667 6.666 6.666 0 1 1-1.936-4.7.667.667 0 1 0 .946-.939A8 8 0 1 0 16 8a.667.667 0 0 0-.667-.667z" class="cls-1"/>
+                                    <path d="M346.666 345.861l-1.446-1.446 1.446-1.446a.569.569 0 0 0-.8-.8l-1.446 1.446-1.446-1.446a.569.569 0 0 0-.8.8l1.446 1.446-1.446 1.446a.569.569 0 0 0 .8.8l1.446-1.446 1.446 1.446a.569.569 0 0 0 .8-.8z" class="cls-1" transform="translate(-336.5 -336.499)"/>
+                                </svg>
+                                <div>
+                                    <div class="text">Disponibilidade</div>
+                                    <div class="subtext">Fora de estoque</div>
+                                </div>
+                                {% endif %}
+                            </div> #}                      
+                        <h1 class="product-name">{{ product.name }}</h1>                        
+                            <div class="line-brand flex align-center">
+                                <div class="raking-area">
+                                    {% element 'snippets/ranking' {
+                                        'ranking': product.ranking,
+                                        'total': true
+                                    } %}
+                                </div>
+                                <div class="code">
+                                    Cód: <span class="value">{{ product.reference ? product.reference : product.id }}</span>
+                                </div>
+                            </div>                            
+                        
+                        {# {{ product.additional_information }}
+
+                        {% if product.additional_message %}
+                        <div class="additional-message">
+                            {{ product.additional_message }}
+                        </div>
+                        {% endif %}       #}        
+                     
+                    </div>
+
+                    {{ productHelper.kit() }}
+                    <div class="section-price{{ product.upon_request ? ' sob-consulta' }}{{ product.stock <= 0 ? ' not-stock' }}">
+                        {# {% if product.category_id == 317 %} #}
+                            {% if product.properties['Metro'] %}
+                            <div class="metro-quadrado">
+                                {{ productHelper.pricing() }}
+                            </div>
+                        {% else %}
+                            {{ productHelper.pricing() }}
+                        {% endif %}
+                    </div>
+                    {{ productHelper.bonus() }}
+    
+                    <form id="form_comprar" class="{{ product.properties['Metro'] ? 'pisos-category' }}" data-stock="{{ product.stock }}" method="post" data-app="product.buy-form" data-id="{{ product.id }}" action="{{ links.cart_add ~ product.id }}">
+                        {{ productHelper.gifts() }}
+                        <div class="box-variants">
+                            {{ productHelper.variants() }}
+                        </div>
+                        {% for discount in ProgressiveDiscounts %}
+                            {% if discount.tag and ( product.stock > 0 and not product.upon_request) %}
+                            <div class="discount-progressive">
+                                {#<div class="product-discount-recursive-tag">{{discount.tag}}</div>#}
+                                <div class="product-discount">{{discount.description}}</div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        {# {% if product.category_id == 317 %} #}
+                        {% if product.properties['Metro'] %}
+                            {% if product.available and product.stock > 0 %}
+
+                                <div class="block-calculadora">
+                                    <span class="title-calculadora">Clique e calcule o seu m²: </span>
+
+                                    <div class="flex align-center">
+                                        <div class="line-double-input flex align-center">                                           
+                                            <input type="tel" name="comprimento" class="comprimento" placeholder="Comprimento">
+                                            <span class="x">
+                                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                                  <defs><clipPath><rect data-name="Retângulo 713" width="16" height="16" transform="translate(26 12)" fill="#ebeef5"/></clipPath></defs><g transform="translate(-26 -12)"><g data-name="x (1)" transform="translate(21.052 7.052)"><line data-name="Linha 10" x1="12.948" y2="12.948" transform="translate(6.474 6.474)" fill="none" stroke="#fe800a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.158"/><line data-name="Linha 11" x2="12.948" y2="12.948" transform="translate(6.474 6.474)" fill="none" stroke="#fe800a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.158"/></g></g>
+                                                </svg>
+                                            </span>
+                                            <input type="tel" name="largura" class="largura" placeholder="Largura">
+                                            <button type="button" class="button-calc">OK</button>  
+                                        </div> 
+
+                                        <span class="line-input result flex align-center">
+                                            <span class="text">Voce precisa comprar = <b></b>m²</span>                                      
+                                        </span>
+                                    </div>
+                                                                          
+                                </div>                                  
+                                
+                                {% for propertie in product.properties %}
+                                    <input type="hidden" name="metro-quadrado-value" class="metro-quadrado-value" value="{{ propertie[0] }}">
+                                {% endfor %}
+
+                                <div class="block-desc-quantidade">
+                                    <span class="title-quantidade">Digite a quantidade de m²:</span>
+                                    {# <span class="sub-quantidade">Obs: O valor será arredondado</span> #}
+                                </div>                        
+                                <div class="block-metro flex align-center">
+                                    <div class="block-ref">
+                                        <span class="minus"></span>
+                                        <div class="input-line">
+                                            <input type="tel" required="false" name="ref-quant" value="" id="ref-quant">
+                                        </div>
+                                        <span class="plus"></span>
+                                    </div>
+                                    <span class="result-metro"><b class="ref-quant">1</b> caixa(s) de <b class="metro"></b>m², <span class="weight-normal">total de </span> <b class="metro-final"></b>/m²</span>
+                                    <input type="hidden" name="quant" id="new-quant" value="1">
+                                </div> 
+
+                            {% endif %}
+                        {% endif %}
+
+                        
+                        <div class="submit-area {{  product.properties['Metro'] ? 'extra-size' }}">                            
+                            {% if not product.upon_request %}
+                                {{ productHelper.form() }}
+
+                                {% if product.available and product.stock > 0 and product.properties['Metro'] %}
+                                    <div class="green-msg-buy">
+                                        A quantidade sugerida já está com 10% a mais de margem de segurança.
+                                    </div>
+                                {% endif %}   
+
+                            {% endif %}                            
+                            {# {% if product.stock > 0 and not product.upon_request %}
+                            <div class="qnt">
+                                <div class="button-increment dec" data-js="decrement" role="button"></div>
+                                <div class="button-increment" data-js="increment" role="button">+</div>
+                            </div>
+                            {% endif %} #}
+                        </div>
+                    </form>
+        
+                    {% if productHelper.shipping() and not product.upon_request %}
+                    <div class="shipping-area">
+                        <div class="box-frete">
+                            {{ productHelper.shipping() }}
+                            <div class="text">Consultar prazo e valor do frete</div>
+                            <form class="new-frete flex justify-between">
+                                <label class="box-left flex">
+                                    <span class="icon icon-truck"></span>
+                                    <input type="tel" class="crazy_cep" name="number-frete" minlength="9" required maxlength="9" placeholder="Digite seu CEP">
+                                </label>
+                                <button class="submit-frete">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                        <defs><clipPath><path d="M0 0H20V20H0z" class="search-frete-ic-1"/></clipPath><style>.search-frete-ic-1{fill:#fff}</style></defs><g><g><path d="M11.655 20.646a8.98 8.98 0 1 1 8.968-8.98 8.987 8.987 0 0 1-8.968 8.98zm0-16.327a7.312 7.312 0 0 0-7.338 7.347 7.439 7.439 0 1 0 14.879 0 7.554 7.554 0 0 0-7.541-7.347z" class="search-frete-ic-1" transform="translate(-2.687 -2.687)"/><path d="M24.63 25.453a.778.778 0 0 1-.51-.2l-4.382-4.388a.793.793 0 0 1 1.121-1.122l4.382 4.388a.8.8 0 0 1 0 1.122 1.447 1.447 0 0 1-.611.2z" class="search-frete-ic-1" transform="translate(-5.471 -5.453)"/></g></g>
+                                    </svg>
+                                </button>
+                            </form>
+                            <div class="result">
+                                {# <a class="shipping-link" target="_blank" href="http://www.buscacep.correios.com.br/sistemas/buscacep/">Não sei meu CEP</a> #}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if product.properties['Metro'] == false or product.available == false %}
+                    <div class="shares-product">
+                        Compartilhe:
+                        <div class="buttons">
+
+                            <a title="Clique aqui e compartilhe pelo facebook" href="javascript:;" data-href="https://www.facebook.com/sharer/sharer.php?u={{ product.link|url_encode }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="12" fill="#3b5998"/>
+                                    <path fill="#fcfcfc" d="M44.74 29.577H42.6v7.845h-3.245v-7.845h-1.543v-2.756h1.543v-1.785a3.042 3.042 0 0 1 3.273-3.273l2.4.01v2.676h-1.741a.66.66 0 0 0-.688.751v1.623h2.424l-.283 2.754z" transform="translate(-29.724 -17.108)"/>
+                                </svg>
+                            </a>
+
+                            <a title="Clique aqui e compartilhe pelo Twitter" href="javascript:;" data-href="https://twitter.com/share?url={{ product.link|url_encode }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="12" fill="#2aa9e0"/>
+                                    <path fill="#fcfcfc" d="M39.084 35.373a5.723 5.723 0 0 1-1.648.451 2.876 2.876 0 0 0 1.264-1.586 5.742 5.742 0 0 1-1.821.7 2.871 2.871 0 0 0-4.888 2.617 8.142 8.142 0 0 1-5.912-3 2.871 2.871 0 0 0 .888 3.83 2.848 2.848 0 0 1-1.3-.359v.036a2.87 2.87 0 0 0 2.3 2.812 2.88 2.88 0 0 1-1.3.05 2.871 2.871 0 0 0 2.679 1.992A5.79 5.79 0 0 1 25.1 44.1a8.157 8.157 0 0 0 12.558-6.873c0-.124 0-.248-.008-.371a5.817 5.817 0 0 0 1.434-1.483z" transform="translate(-19.733 -26.749)"/>
+                                </svg>
+                            </a>
+
+                            <a href="//www.pinterest.com/pin/create/button/" class="pin-it-button" target="_blank" count-layout="none" rel="noreferrer noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g transform="translate(-0.001 -0.002)"><circle data-name="Elipse 180" cx="12" cy="12" r="12" transform="translate(0.001 0.002)" fill="#e60023"/><path data-name="Caminho 61346" d="M35.765,35.4a4.058,4.058,0,0,1-2-.952c-.391,2.052-.869,4.018-2.284,5.046-.437-3.1.641-5.43,1.142-7.9-.854-1.437.1-4.331,1.9-3.618,2.217.877-1.919,5.345.857,5.9,2.9.583,4.082-5.03,2.284-6.855-2.6-2.636-7.56-.06-6.95,3.713.149.922,1.1,1.2.381,2.475-1.662-.368-2.158-1.679-2.094-3.427a5.594,5.594,0,0,1,5.046-5.142c3.131-.35,6.069,1.15,6.474,4.094.456,3.324-1.413,6.923-4.761,6.664Z" transform="translate(-22.796 -19.33)" fill="#fcfcfc"/></g>
+                                </svg>
+                            </a>
+
+                            <a title="Clique aqui e compartilhe pelo Whatsapp" target="_blank" href="https://wa.me/?text={{ product.link|url_encode }}" rel="noreferrer noopener">                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <g transform="translate(-0.001 -0.002)"><circle data-name="Elipse 180" cx="12" cy="12" r="12" transform="translate(0.001 0.002)" fill="#26d366"/>
+                                    <g data-name="whatsapp-(1)" transform="translate(4.752 5.002)"><path data-name="Caminho 61347" d="M12.153,2.035A6.939,6.939,0,0,0,1.234,10.405L.25,14l3.678-.965a6.93,6.93,0,0,0,3.315.844h0A6.94,6.94,0,0,0,12.153,2.035ZM7.246,12.708h0a5.759,5.759,0,0,1-2.935-.8l-.21-.125-2.182.573L2.5,10.224l-.137-.218a5.766,5.766,0,1,1,4.885,2.7ZM10.408,8.39c-.173-.087-1.026-.506-1.185-.564s-.274-.087-.39.087-.448.564-.549.68-.2.13-.376.043a4.735,4.735,0,0,1-1.394-.86,5.229,5.229,0,0,1-.964-1.2c-.1-.174,0-.258.076-.354a4.9,4.9,0,0,0,.433-.593.319.319,0,0,0-.015-.3c-.043-.087-.39-.94-.534-1.287s-.284-.292-.39-.3-.217-.006-.332-.006a.637.637,0,0,0-.462.217A1.944,1.944,0,0,0,3.721,5.4a3.372,3.372,0,0,0,.708,1.793A7.726,7.726,0,0,0,7.39,9.807a9.918,9.918,0,0,0,.988.365,2.376,2.376,0,0,0,1.092.069,1.786,1.786,0,0,0,1.17-.824,1.448,1.448,0,0,0,.1-.824c-.043-.072-.159-.116-.332-.2Zm0,0" fill="#fcfcfc" fill-rule="evenodd"/></g>
+                                    </g>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                    {% endif %}
+
+
+                </div>
+            </div>
+     
+    </div>
+    
+    {# <div class="area-buttons container">
+        {% if product.description %}
+        <div class="button-desc" tabindex="0" role="button"><span class="icon icon-desc"></span>Descrição do produto <span class="icon icon-down"></span></div>
+        {% endif %}
+        <div class="button-desc" tabindex="0" role="button"><span class="icon icon-orders"></span>Especificações técnicas <span class="icon icon-down"></span></div>
+    </div>
+    {% if bundle %}
+    <div class="white-bg" data-item-tab="Compre junto">
+        <div class="container">
+            <div class="section section-bundle">
+                <h2 class="title-section-product">Aproveite e Compre Junto</h2>
+                <div class="bundle-product">
+                    {{ bundle }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %} #}
+
+    {% if bundle %}
+    <div class="white-bg" data-item-tab="Compre junto">
+        <div class="container">
+            <div class="section section-bundle">
+                <h2 class="title-section-product">Aproveite e Compre Junto</h2>
+                <div class="bundle-product">
+                    {{ bundle }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container">  
+  
+        {% element 'snippets/tabs_product' {'product': product } %}
+      
+        {% element 'snippets/reviews_product' {'product': product } %}
+   
+        {% if product.related_products|length %}
+        
+        <div class="section-showcase list-products-second">
+            <h2 class="title-section-product">Produtos relacionados</h2>
+        
+            {% element 'snippets/swiper-products' {
+                "products": product.related_products,
+                "items": 4,
+                "slide": true,
+            } %}
+          
+        </div>
+        {% endif %}
+
+        {% if settings.history_position == 1 %}
+        <div class="products-visited">
+            <h2 class="title-section-product">Você estava olhando</h2>
+            {% element 'snippets/history' {
+                'store.id': store.id,
+                'pages.current': pages.current,
+                'category.id': category.id
+            } %}
+        </div>
+    {% endif %}
+    </div>
+</div>

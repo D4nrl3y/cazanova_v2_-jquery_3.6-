@@ -1,0 +1,103 @@
+
+{% set whats = settings.whatsapp_number %}
+{% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+<div class="area-page-contact">
+    <div class="section-whats">
+        <div class="container">
+            {% element 'snippets/breadcrumb' { "list": 
+            [
+                {
+                    "name": "Fale conosco",
+                    "link": links.contact
+                }
+            ]
+            } %}
+            <div class="bg-area">
+                <h2 class="title">Central de Atendimento</h2>
+                <p class="desc">Escolha uma das nossas formas de atendimento com um de nossos especialistas, será um prazer falar com você!</p>
+                <div class="clock">Segunda à sexta-feira das 08:00 às 18:00 e Sábado das 08:00 às 13:00.</div>             
+            </div>
+        </div>       
+    </div> 
+
+
+    <div class="container">
+        <div class="section-form">                       
+            <div class="list-contact">
+                {% element 'snippets/phone' { 'phone': settings.phone, 'text': 'Telefone','desc': 'Você pode tirar suas dúvidas através do nosso telefone.' } %}
+     
+                {% if settings.email_contact %}
+                <a href="mailto:{{ settings.email_contact }}" class="item">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76">
+                            <g transform="translate(-576 -1686)"><rect width="62" height="62" rx="31" transform="translate(583 1693)" fill="#fe800a"/><rect data-name="bg" width="76" height="76" rx="38" transform="translate(576 1686)" fill="#fe800a" opacity="0.2"/><g transform="translate(597.05 1708.84)"><path data-name="Caminho 61382" d="M4.79,4H27.11A2.8,2.8,0,0,1,29.9,6.79V23.53a2.8,2.8,0,0,1-2.79,2.79H4.79A2.8,2.8,0,0,1,2,23.53V6.79A2.8,2.8,0,0,1,4.79,4Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><path data-name="Caminho 61383" d="M29.9,6,15.95,15.765,2,6" transform="translate(0 0.79)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/></g></g>
+                        </svg>
+                    </div>
+                    <div class="text">E-mail</div>
+                    <p class="desc">ou também pode tirar suas dúvidas através do nosso e-mail.</p>
+                    <div class="value">{{ settings.email_contact }}</div>
+                </a>
+                {% endif %}
+
+                {% if settings.whatsapp_number %}
+                {% set whats = settings.whatsapp_number %}
+                {% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+             
+                    <a href="{{ 'https://api.whatsapp.com/send?l=pt&phone=55'~ link }}" class="item" target="_blank" rel="noreferrer noopener">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76">
+                              <g transform="translate(-576 -1686)"><rect width="62" height="62" rx="31" transform="translate(583 1693)" fill="#fe800a"/>
+                                <rect data-name="bg" width="76" height="76" rx="38" transform="translate(576 1686)" fill="#fe800a" opacity="0.2"/>
+                                <g data-name="1384095" transform="translate(600 1709)"><path data-name="Caminho 56159" d="M23.981,4.09a14.077,14.077,0,0,0-19.839,0A13.818,13.818,0,0,0,0,13.953v.007a13.889,13.889,0,0,0,1.714,6.592L.038,28.166l7.7-1.752a14.1,14.1,0,0,0,6.323,1.5h.006A14.032,14.032,0,0,0,24,23.829,13.809,13.809,0,0,0,23.981,4.09ZM14.069,25.718h0a11.882,11.882,0,0,1-5.648-1.432l-.364-.2L2.93,25.254,4.042,20.2l-.214-.37A11.751,11.751,0,0,1,2.2,13.957a11.867,11.867,0,0,1,20.231-8.31,11.686,11.686,0,0,1,3.511,8.315A11.831,11.831,0,0,1,14.069,25.718Zm0,0" transform="translate(0)" fill="#fff" stroke="#fff" stroke-width="0.4"/><path data-name="Caminho 56160" d="M6.941,4.433H6.324a1.184,1.184,0,0,0-.858.4A3.591,3.591,0,0,0,4.34,7.51a6.23,6.23,0,0,0,1.314,3.317c.161.214,2.226,3.556,5.5,4.842,2.719,1.068,3.272.856,3.862.8a3.25,3.25,0,0,0,2.172-1.525,2.673,2.673,0,0,0,.188-1.525c-.081-.134-.3-.214-.617-.374s-1.9-.95-2.194-1.057-.51-.16-.724.161-.847,1.062-1.034,1.276-.375.241-.7.081a8.9,8.9,0,0,1-2.577-1.6A9.861,9.861,0,0,1,7.72,9.654C7.532,9.334,7.7,9.16,7.861,9c.145-.144.34-.34.5-.527a2.169,2.169,0,0,0,.314-.535.589.589,0,0,0-.027-.562c-.081-.161-.7-1.747-.984-2.381h0c-.241-.534-.495-.552-.724-.562Zm0,0" transform="translate(3.3 3.371)" fill="#fff" stroke="#fff" stroke-width="0.4"/></g></g>
+                            </svg>
+                        </div>                            
+                        <div class="text">WhatsApp</div>
+                        <p class="desc">caso queira você pode entrar em contato através do WhatsApp</p>
+                        <div class="value">{{ settings.whatsapp_number }}</div>                                  
+                    </a>     
+                {% endif %}
+                {# <div class="item">
+                    <div class="text">Endereço</div>
+                    <p class="desc">Você pode tirar suas dúvidas através do nosso telefone.</p>
+                    <div class="value">{{ settings.anddress_store }}</div>
+                </div>
+                <div class="social-area">
+                    <a class="insta" href="https://www.instagram.com/{{ settings.social_instagram }}" target="_blank" rel="noreferrer noopener">@{{ settings.social_instagram }}</a>
+                    <p>Acompanhe o nosso trabalho nas redes sociais para ficar por dentro dos nossos lançamentos e novidades!</p>
+                    {% element 'snippets/social-list' %}
+                </div> #}
+            </div>           
+            
+        </div>
+    </div>
+
+    <div class="cols-block">
+        <div class="container">
+            <div class="cols-content flex f-wrap"> 
+
+                <div class="col-form">            
+                    <h2 class="title">Formulário de contato</h2>
+                    <p class="desc small">Dúvidas, críticas ou sugestões? Entre em contato conosco, preenchendo o formulário abaixo.</p>            
+                    <div class="area-form"></div>
+                    {{ content_for_layout }}
+                </div>    
+
+                <div class="col-map">
+                    <h2 class="title">Nosso endereço</h2>
+                    <p class="desc small">
+                        Cazanova Material de Construção e Distribuição LTDA <br/>
+                        R Leão Dourado, nº 40 - São Francisco - Caruaru/PE - CEP 55008-010 
+                    </p>
+                    <div class="map-iframe">
+                        <div class="iframe">
+                            {{ settings.maps_google }}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

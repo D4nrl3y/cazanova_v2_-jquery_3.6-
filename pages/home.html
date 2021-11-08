@@ -1,0 +1,362 @@
+{% set image = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjwAsAAB4AAdpxxYoAAAAASUVORK5CYII=' %}
+    
+    {#<div class="line-info-bg">
+        <div class="container">
+            {% element 'snippets/banner_info' %}
+        </div>
+    </div>#}
+
+
+    {# {% element 'snippets/banner-grid' {'desk': banners.extra2, 'mob': banners.extra3} %} #}
+
+    {% element 'snippets/banner-line' %}
+
+    {# Linha de produtos padrao 1 #}    
+
+    {% if settings.id_1_vitrine %} 
+
+        {% set categoryVitrine1 = Categories( { "id": settings.id_1_vitrine } ) %}
+
+        {% set productsVitrine1 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_1_vitrine,
+            'categories': categoryVitrine1.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine1,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_1_vitrine,
+                'linkHref': categoryVitrine1.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}
+       
+    {# Linha de produtos padrao 1 #}
+
+    {# Linha de produtos padrao 2 #}
+
+    {% if settings.id_2_vitrine %} 
+
+        {% set categoryVitrine2 = Categories( { "id": settings.id_2_vitrine } ) %}
+
+        {% set productsVitrine2 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_2_vitrine,
+            'categories': categoryVitrine2.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine2,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_2_vitrine,
+                'linkHref': categoryVitrine2.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}      
+
+    {# Linha de produtos padrao 2 #}
+
+
+    {# Produtos mais vendidos - destaque fundo cinza  #}
+
+    {% if settings.id_3_vitrine %} 
+
+        {% set categoryVitrine3 = Categories( { "id": settings.id_3_vitrine } ) %}
+
+        {% set productsFeaturedOne = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_3_vitrine,
+            'categories': categoryVitrine3.id,
+            'order': 'rand',
+        }) %}
+
+        {% if productsFeaturedOne %}        
+            {% element 'showcase-featured' {
+                'products': productsFeaturedOne,
+                'info': {
+                    'title': settings.text_3_vitrine,
+                    'linkHref':  categoryVitrine3.link,
+                    'linkText': 'Ver todas',
+                "items": 2,
+                "slide": true,
+                },
+            } %}
+        {% endif %}
+
+    {% endif %}
+
+    {# Produtos mais vendidos - destaque fundo cinza  #}
+
+
+
+    {# Linha de produtos padrao 4 #}
+     
+    {% if settings.id_4_vitrine %} 
+
+        {% set categoryVitrine4 = Categories( { "id": settings.id_4_vitrine } ) %}
+
+        {% set productsVitrine4 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_4_vitrine,
+            'categories': categoryVitrine4.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine4,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_4_vitrine,
+                'linkHref': categoryVitrine4.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}
+       
+    {# Linha de produtos padrao 4 #}
+
+    {# Linha de produtos padrao 5 #}
+
+    {% if settings.id_5_vitrine %} 
+
+        {% set categoryVitrine5 = Categories( { "id": settings.id_5_vitrine } ) %}
+
+        {% set productsVitrine5 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_5_vitrine,
+            'categories': categoryVitrine5.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine5,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_5_vitrine,
+                'linkHref': categoryVitrine5.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}       
+
+    {# Linha de produtos padrao 5 #}
+
+    {% element 'snippets/banner-grid' {'desk': banners.extra4, 'mob': banners.extra5} %}
+    {% element 'brands' %}
+
+    {# Selecionados para você - destaque fundo cinza 6 #}
+
+    {% if settings.id_6_vitrine %} 
+
+        {% set categoryVitrine6 = Categories( { "id": settings.id_6_vitrine } ) %}
+
+        {% set productsFeaturedOne = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_6_vitrine,
+            'categories': categoryVitrine6.id,
+            'order': 'rand',
+        }) %}
+
+        {% if productsFeaturedOne %}        
+            {% element 'showcase-featured' {
+                'products': productsFeaturedOne,
+                'info': {
+                    'title': settings.text_6_vitrine,
+                    'linkHref':  categoryVitrine6.link,
+                    'linkText': 'Ver todas',
+                "items": 2,
+                "slide": true,
+                },
+            } %}
+        {% endif %}
+    {% endif %}
+
+    {# Selecionados para você - destaque fundo cinza 6 #}
+
+    {# Navegue por categoria #}
+
+    <div class="section-show">
+        <div class="container">
+            {% element 'showcase-categories' %}    
+        </div>
+    </div>
+
+    {# Navegue por categoria #}  
+
+    {% element 'snippets/banner-grid' {'desk': banners.extra6, 'mob': banners.extra7} %}
+  
+    {# Listagem de produtos padrao 7 #}
+
+    {% if settings.id_7_vitrine %} 
+
+        {% set categoryVitrine7 = Categories( { "id": settings.id_7_vitrine } ) %}
+
+        {% set productsVitrine7 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_7_vitrine,
+            'categories': categoryVitrine7.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine8,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_7_vitrine,
+                'linkHref': categoryVitrine7.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}   
+
+    {# Listagem de produtos padrao 7 #}
+
+    {# Listagem de produtos padrao 8 #}
+
+    {% if settings.id_8_vitrine %} 
+
+        {% set categoryVitrine8 = Categories( { "id": settings.id_8_vitrine } ) %}
+
+        {% set productsVitrine8 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_8_vitrine,
+            'categories': categoryVitrine8.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine8,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_8_vitrine,
+                'linkHref': categoryVitrine8.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}   
+
+    {# Listagem de produtos padrao 8 #}
+
+
+    {% element 'snippets/banner-grid' {'desk': banners.extra8, 'mob':banners.extra9} %}
+
+    {# Listagem de produtos padrao 9 #}
+
+    {% if settings.id_9_vitrine %} 
+
+        {% set categoryVitrine9 = Categories( { "id": settings.id_9_vitrine } ) %}
+
+        {% set productsVitrine9 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_9_vitrine,
+            'categories': categoryVitrine9.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine9,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_9_vitrine,
+                'linkHref': categoryVitrine9.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}   
+
+    {# Listagem de produtos padrao 9 #}
+ 
+    {# Listagem de produtos padrao 10 #}
+
+    {% if settings.id_10_vitrine %} 
+
+        {% set categoryVitrine10 = Categories( { "id": settings.id_10_vitrine } ) %}
+
+        {% set productsVitrine10 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_10_vitrine,
+            'categories': categoryVitrine10.id,
+            'order': 'rand'
+        }) %}
+
+        {% element 'showcase' {
+            'products': productsVitrine10,
+            'leftText': true,            
+            'info': {
+                'title': settings.text_10_vitrine,
+                'linkHref': categoryVitrine10.link,
+                'linkText': 'Ver todas'
+            },
+            "items": 5,
+            "slide": true,
+            "promotion": true
+        } %}
+    {% endif %}   
+
+   {# Listagem de produtos padrao 10 #}
+    
+   {# Preços imbatíveis - destaque fundo cinza 11 #}
+
+    {% if settings.id_11_vitrine %} 
+
+        {% set categoryVitrine11 = Categories( { "id": settings.id_11_vitrine } ) %}
+
+        {% set productsFeatured11 = Products({
+            'filter': ['available'],
+            'limit': settings.qnt_11_vitrine,
+            'categories': categoryVitrine11.id,
+            'order': 'rand',
+        }) %}
+
+        {% if productsFeatured11 %}        
+            {% element 'showcase-featured' {
+                'products': productsFeatured11,
+                'info': {
+                    'title': settings.text_11_vitrine,
+                    'linkHref':  categoryVitrine11.link,
+                    'linkText': 'Ver todas',
+                "items": 2,
+                "slide": true,
+                },
+            } %}
+        {% endif %}
+    {% endif %}
+
+    {# Selecionados para você - destaque fundo cinza 11 #}
+
+    {# {% element 'blog' %} #}
+
+    {% element 'snippets/banner-bottom' %}
+
+    <div class="container">
+        {% element 'snippets/instagram' %}
+    </div>
+    

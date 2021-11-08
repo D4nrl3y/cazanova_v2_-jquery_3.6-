@@ -1,0 +1,22 @@
+<div class="modal-menu">
+    <a href="{{ category.link }}" class="bar-name" data-action="Ver todos">{{ category.name }}</a>
+    <div class="prev" role="button" tabindex="0"><span class="icon icon-right"></span>Voltar</div>
+    {% for item in category.children %}
+    {% if not item.images[0] %}
+    <a href="{{ item.link }}" class="link-normal">{{ item.name }}</a>
+    {% else %}
+    <a class="category-image{{ item.children ? ' sub-is' }}" href="{{ item.link }}">
+        <span class="image">
+            <img src="{{ item.images[0] }}" alt="{{ item.name }}">
+        </span>
+        <span class="info-text">
+            <span class="name">{{ item.name }}</span>
+            <span class="icon icon-right"></span>
+        </span>
+    </a>
+    {% endif %}
+    {% if item.children %}
+    {% element 'snippets/nav_modal' {'category': item } %}
+    {% endif %}
+    {% endfor %}
+</div>

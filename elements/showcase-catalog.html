@@ -1,0 +1,5 @@
+<div class="list-catalog list-products">
+    {% for itemProduct in products %}
+        {% element 'snippets/product' { "itemProduct": itemProduct } %}
+    {% endfor %}
+</div>

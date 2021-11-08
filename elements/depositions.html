@@ -1,0 +1,13 @@
+<div class="section section-depositions">
+    <div class="flex justify-between align-center">
+        <h2 class="title-section">{{ title }} <span class="small">{{ subtitle }}</span></h2>
+        <a class="new-tab" href="/depoimentos-de-clientes">Ver todos depoimentos<span class="icon icon-right"></span></a>
+    </div>
+    <div class="swiper-container">
+        {% element 'CustomerReview.reviews' %}
+    </div>
+    <div class="swiper-pagination">
+        <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+        <span class="swiper-pagination-bullet"></span>
+    </div>
+</div>

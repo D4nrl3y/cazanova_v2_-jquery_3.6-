@@ -1,0 +1,60 @@
+{% if banners.home or banners.extra1 %}
+    {% if banners.extra1 and utils.is_mobile %}
+        {% if banners.extra1.type == 'image' %}
+            <div class="banner-full">
+                <a{{ banners.extra1.link ? ' href="'~banners.extra1.link~'" ' }} target="{{ banners.extra1.target }}" style="--padding: {{ (banners.extra1.height / banners.extra1.width) * 100 }}%">
+                    <img src="{{ banners.extra1.src }}" width="{{ banners.extra1.width }}" height="{{ banners.extra1.height }}" alt="{{ banners.extra1.alt }}">
+                </a>    
+            </div>
+        {% else %}
+            <div class="banner-full" data-config='{"time": 5000, "fade": false }'>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for slide in banners.extra1.slides %}
+                        <div class="swiper-slide">
+                            <a {{ slide.link ? ' href="'~slide.link~'" ' }} target="{{ slide.target }}" style="--padding: {{ (slide.height / slide.width) * 100 }}%; max-width: {{ slide.width }}px;">
+                                <img width="{{ slide.width }}" height="{{ slide.height }}" {{ loop.index != 1 ? 'class="swiper-lazy" data-' }}src="{{ slide.image }}" alt="{{ slide.label }}">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>                    
+                    <div class="arrow-slide position-normal prev"></div>
+                    <div class="arrow-slide position-normal next"></div>
+                    {# <div class="swiper-pagination"></div> #}
+                </div>
+            </div>
+        {% endif %}
+    {% else%}
+        {% if banners.home.type == 'image' %}
+            <div class="banner-full">
+                <div class="item">
+                    <a{{ banners.home.link ? ' href="'~banners.home.link~'" ' }} target="{{ banners.home.target }}" style="--padding: {{ (banners.home.height / banners.home.width) * 100 }}%">
+                        <img src="{{ banners.home.src }}" width="{{ banners.home.width }}" height="{{ banners.home.height }}" alt="{{ banners.home.alt }}">
+                    </a> 
+                </div>
+            </div>
+        {% else %}
+            <div class="banner-full" data-config='{"stop": {{ settings.stop_hover ? "true" : "false" }}, "time": {{ settings.time_slide ? settings.time_slide : 5000 }}, "fade": {{ settings.fade ? "true" : "false" }} }'>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for slide in banners.home.slides %}
+                            <div class="swiper-slide">
+                                <a {{ slide.link ? ' href="'~slide.link~'" ' }} style="--padding: {{ (slide.height / slide.width) * 100 }}%" target="{{ slide.target }}">
+                                    <img width="{{ slide.width }}" height="{{ slide.height }}" {{ loop.index != 1 ? 'class="swiper-lazy" data-' }}src="{{ slide.image }}" alt="{{ slide.label }}">
+                                </a>
+                            </div>
+                        {% endfor %}    
+                    </div>
+                    <div class="arrow-slide position-normal prev"></div>
+                    <div class="arrow-slide position-normal next"></div>
+                    {# <div class="swiper-pagination">
+                        {% for i in 1..banners.home.slides|length %}
+                        <span class="swiper-pagination-bullet{{ loop.index == 1 ? ' swiper-pagination-bullet-active' }}"></span>
+                        {% endfor %}
+                    </div> #}
+                    
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endif %}    

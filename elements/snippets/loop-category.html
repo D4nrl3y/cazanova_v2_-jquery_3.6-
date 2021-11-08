@@ -1,0 +1,19 @@
+<div class="list-category">
+    <div class="prev" tabindex="0" role="button"><span class="icon icon-left"></span>Voltar</div>
+    <div class="item">
+        <a class="target featured-true" href="{{ category.link }}">
+            <span>{{ category.name }}</span>
+            <i class="icon icon-target"></i>
+        </a>
+    </div>
+    {% for list in category.children %}
+    <div class="item">
+        <a class="target" href="{{ list.link }}">
+            <span>{{ list.name }}</span>
+            {% if list.children and false %}
+            <i class="icon icon-arrow-bottom"></i>
+            {% endif %}
+        </a>
+    </div>
+    {% endfor %}
+</div>

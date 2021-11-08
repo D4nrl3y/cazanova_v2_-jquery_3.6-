@@ -1,0 +1,13 @@
+{% if banners.extra12 %}
+	<div class="section-banners{{ settings.banner_info_bg == '#ffffff' or not(settings.banner_info_bg) ? ' reset-margin-top' }} margin-top ">
+	    <div class="list slide-section">
+			{% for slide in banners.extra12.slides %}
+				<div class="item">
+		            <a {{ slide.link ? 'href="'~slide.link~'"' }} target="{{ slide.target }}">
+		                <img class="" height="{{ slide.height }}" src="{{ slide.image }}">
+		            </a>  
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

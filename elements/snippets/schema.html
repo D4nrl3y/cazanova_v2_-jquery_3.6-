@@ -1,0 +1,12 @@
+<span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <meta itemprop="price" content="{{ product.minimum_price > 0 ? product.minimum_price|number_format(2, '.', '') : product.price|number_format(2, '.', '') }}" />
+    <meta itemprop="priceCurrency" content="{{ settings.currency == 'R$' ? 'BRL' : 'USD' }}" />
+    <link itemprop="itemCondition" href="http://schema.org/NewCondition" />
+    {% if settings.without_stock_sale or product.stock %}
+        <link itemprop="availability" href="http://schema.org/InStock" />
+    {% else %}
+        <link itemprop="availability" href="http://schema.org/OutOfStock" />
+    {% endif %} 
+    <meta itemprop="url" content="{{ product.link }}"/>
+    <meta itemprop="priceValidUntil" content="{{ product.promotion_id ? product.end_promotion: "now"|date("d/m/Y") }}">
+</span>

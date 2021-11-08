@@ -1,0 +1,88 @@
+{# <div class="section-categories">
+    {% element 'snippets/area-title' {
+        'info': {
+            'title': 'Navegue pelas categorias',
+        }
+    } %}
+    <div class="relative">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for category in categories %}
+                {% if category.images[0] %}
+                <div class="swiper-slide">
+                    <a href="{{ category.link }}" class="item-category">
+                        <span class="icon-area">
+                            <img class="lazyload" data-src="{{ category.images[0] }}" alt="{{ category.name }}">
+                        </span>
+                        <span class="title">{{ category.name }}</span>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}  #}
+
+                {# <div class="swiper-slide">
+                    <a href="{{ category.link }}" class="item-category">
+                        <span class="icon-area">
+                            <img class="lazyload" data-src="{{ category.images[0] }}" alt="{{ category.name }}">
+                        </span>
+                        <span class="title">{{ category.name }}</span>
+                    </a>
+                </div> #}                
+{#             </div>
+        </div>
+        <div class="arrow-slide position-normal icon icon-arrow-left prev"></div>
+        <div class="arrow-slide position-normal icon icon-arrow-right next"></div>
+    </div>
+    
+</div> #}
+
+{% set categories = [] %}
+
+{% for i in 1..30 %}
+    {% set position = attribute(settings, 'category_'~i~'_position') %}
+    {% set link = attribute(settings, 'category_'~i~'_url') %}
+    {% set img = attribute(settings, 'category_'~i~'_image') %}
+    {% set name = attribute(settings, 'category_'~i~'_text') %}
+
+    {% if img %}
+        {% set categories = categories|merge([{ "position": position, "img": img, "link": link, "name":name }]) %}
+    {% endif %}
+{% endfor %}
+
+
+{% if categories|length and settings.categories_active %}
+<div class="section-categories">
+    {% element 'snippets/area-title' {
+        'info': {
+            'title': 'Navegue pelas categorias',
+        }
+    } %}
+    <div class="container">
+        <div class="relative">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for i in 1..30 %}
+                        {% set loopParent = loop.index %}
+                        {% for list in categories %}
+                            {% if list.position == loopParent %}
+                                <div class="swiper-slide">
+                                    <{{ list.link ? 'a' : 'span' }} {{ list.link ? 'href="'~list.link~'"' }} class="item-category">
+                                    <span class="icon-area">
+                                        <img class="swiper-lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKAQMAAAC3/F3+AAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjwAsAAB4AAdpxxYoAAAAASUVORK5CYII=" data-src="{{ themePath }}{{ list.img }}?{{ utils.assets_version }}" alt="Category">
+                                        </{{ list.link ? 'a' : 'span' }}>
+                                    </span>
+                                    <span class="title">{{ list.name }}</span>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            
+            </div>
+            <div class="arrow-slide position-normal icon icon-arrow-left prev"></div>
+            <div class="arrow-slide position-normal icon icon-arrow-right next"></div>
+        </div>
+       
+    </div>
+</div>
+{% endif %}

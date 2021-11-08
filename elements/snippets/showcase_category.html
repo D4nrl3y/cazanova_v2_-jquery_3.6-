@@ -1,0 +1,50 @@
+{% if settings.id_category %}
+{% set category = Categories( { "id": settings.id_category } ) %}
+
+{% if settings.home_rand %}
+{% set productsCategory = Products({
+    'filter': ['available'],
+    'limit': settings.qnt_category ? settings.qnt_category : 3,
+    'categories': category.id,
+    'order': 'rand'
+})
+%}
+{% else %}
+{% set productsCategory = Products({
+    'filter': ['available'],
+    'limit': settings.qnt_category ? settings.qnt_category : 3,
+    'categories': category.id
+    
+})
+%}
+{% endif %}
+<div class="showcase-category">
+    <div class="container">
+        <div class="line flex">
+            <div class="box-text flex align-center">
+                <div class="center">
+                    <h2 class="title uppercase">{{ settings.text_category ? settings.text_category : category.name }}</h2>
+                    <div class="sub-title uppercase">{{ settings.description_category ? settings.description_category : 'Uma seleção especial para você arrasar' }}</div>
+                    <a class="button-white" href="https://www.cazanovaconstrucao.com.br/promocao-teste">COMPRE AGORA!</a>
+                </div>
+            </div>
+            <div class="cols">
+                {% if productsCategory|length %}
+                <div class="slide-category flex">
+                    {% for product in productsCategory %} 
+                    <div class="item flex">
+                        {% element 'snippets/product' {
+                            "product": product,
+                            "slide": '1'
+                        } %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="msg-list white flex justify-center">): Nenhum produto encontrado</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

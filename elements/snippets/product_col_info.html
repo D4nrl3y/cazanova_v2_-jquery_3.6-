@@ -1,0 +1,33 @@
+{% if productHelper.banner() %}{{ productHelper.banner() }}{% endif %}
+{% if not utils.is_mobile %}
+<div class="list-star flex justify-center">
+    {% element 'snippets/ranking' {
+        'nota': product.ranking,
+        'total': true
+    } %}
+</div>
+{% if not product.upon_request or not product.stock == 0 or product.available  %}
+<div class="info-p flex justify-center">
+    <span clas="item">Cod. <span class="value">{{ product.reference ? product.reference : product.id }}</span></span>
+</div>
+{% endif %}
+<h1 class="product-name" data-item-tab>{{ product.name }}</h1>
+{% endif %}
+{% if not utils.is_mobile %}
+<div class="seals flex justify-center align-center">
+    {% if product.additional_button and Image('additional_button') %}
+    <div class="add">
+        {{ Image('additional_button') }}
+    </div>
+    {% endif %}
+    {% if product.new %}
+    <span class="new">Lançamento</span>
+    {% endif %}
+    {% if product.price_offer > 0 %}
+    {% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
+    {% if porcentagemDesconto < 100 %}
+    <div class="discount">{{ porcentagemDesconto|number_format }}%</div>
+    {% endif %}  
+    {% endif %}
+</div>
+{% endif %}

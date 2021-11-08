@@ -1,0 +1,45 @@
+<ul class="nav-category">
+    {% for category in categories %}
+    {% set loopIndex = loop.index %}
+    <li>
+        <a href="{{ category.link }}" {{ category.children ? 'class="has-sub"' }} data-id="{{ category.id }}">
+            <span>{{ category.name }}</span>
+            {% if category.children %}
+                <i class="icon icon-right"></i>
+            {% endif %}
+        </a>
+        {% if category.children %}
+        <div class="sub flex justify-between" data-text="{{ category.name }}">
+            <div class="scrollbar-inner">
+                <ul class="subs">
+                    {% for level2 in category.children %}
+                    <li>
+                        <a href="{{ level2.link }}">{{ level2.name }}</a>
+                        {# {% if level2.children %}
+                        <ul>
+                            {% for level3 in level2.children %}
+                            <li>
+                                <a class="third" href="{{ level3.link }}">{{ level3.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %} #}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {# {% set productNew = Products({
+                'filter': ['available'],
+                'order': {'quantity_sold': 'desc'},
+                'limit': 1
+            })
+            %}
+            {% if productNew %}
+                {% element 'snippets/product' {'itemProduct': productNew[0]} %}
+            {% endif %} #}
+        </div>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>

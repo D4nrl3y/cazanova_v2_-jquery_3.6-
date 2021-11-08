@@ -1,0 +1,46 @@
+{% if settings.whatsapp_number %}
+{% set whats = settings.whatsapp_number %}
+{% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+<div class="area-buttons">
+    <a class="flex align-center" href="https://wa.me/55{{link}}" target="_blank" rel="noreferrer noopener">
+        <span class="icon icon-whatsapp"></span>
+        <span class="value">Quero comprar <span>e preciso tirar uma dúvida</span></span>
+
+    </a>
+    <a class="flex align-center" href="https://wa.me/55{{link}}" target="_blank" rel="noreferrer noopener">
+        <span class="icon icon-whatsapp"></span>
+        <span class="value">Já comprei <span>e preciso de ajuda</span></span>
+    </a>
+</div>
+
+{% endif %}
+<div class="box-links">
+    {% set tel = settings.phone %}
+    {% if tel %}
+    {% set tellink = tel|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+    <a class="flex align-center" href="tel:{{ tellink }}">
+        <span class="icon icon-phone-nav"></span>
+        <span class="value">Telefone <span>{{ settings.phone }}</span></span>
+    </a>
+    {% endif %}
+    {% if settings.whatsapp_number %}
+    {% set whats = settings.whatsapp_number %}
+    {% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+    <a class="flex align-center" href="https://wa.me/55{{link}}" rel="noreferrer noopener" target="_blank">
+        <span class="icon icon-whats"></span>
+        <span class="value">WhatsApp <span>{{ settings.whatsapp_number }}</span></span>
+    </a>
+    {% endif %}
+
+    {% if settings.email_contact %}
+    <a class="flex align-center" href="mailto:{{ settings.email_contact }}">
+        <span class="icon icon-email"></span>
+        <span class="value">E-mail <span>{{ settings.email_contact }}</span></span>
+    </a>
+    {% endif %}
+</div>
+
+<b class="featured">Horário de atendimento</b>
+<div class="clock">
+    {{ Translation('ag_atendimento') }}
+</div>

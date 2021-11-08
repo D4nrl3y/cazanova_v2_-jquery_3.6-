@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Site_Blindado_-_Logo" width="121.445" height="27.173" viewBox="0 0 121.445 27.173">
+    <defs>
+        <radialGradient id="radial-gradient" cx="1" cy="1.007" r="1.136" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#00f600"/>
+            <stop offset=".773" stop-color="#00cb00"/>
+            <stop offset="1" stop-color="#00cb00"/>
+        </radialGradient>
+        <radialGradient id="radial-gradient-2" cx=".002" cy=".991" r=".997" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#00cb00"/>
+            <stop offset=".908" stop-color="#009800"/>
+            <stop offset="1" stop-color="#009800"/>
+        </radialGradient>
+        <radialGradient id="radial-gradient-3" cx="1.005" cy="-.004" r="1.008" xlink:href="#radial-gradient-2"/>
+        <radialGradient id="radial-gradient-4" cx="-.005" cy="-.004" r="1.013" xlink:href="#radial-gradient"/>
+        <style>
+            .cls-7{fill-rule:evenodd;fill:#fff}
+        </style>
+    </defs>
+    <g id="logo-site-blindado">
+        <g id="Layer_1">
+            <g id="Grupo_515">
+                <g id="Group">
+                    <path id="Shape" fill="#010101" fill-rule="evenodd" d="M121.445 20.772a3.462 3.462 0 0 1-3.412 3H3.388a3.456 3.456 0 0 1-3.388-3V7.222a3.45 3.45 0 0 1 3.363-3h114.695a3.431 3.431 0 0 1 3.363 3v13.55z" transform="translate(0 -.398)"/>
+                    <g id="Shape-2" transform="translate(4.39)">
+                        <g id="Grupo_513" fill-rule="evenodd">
+                            <path id="Caminho_51151" fill="#00cb00" d="M17.164 21.083a20.652 20.652 0 0 0 3.9-17.035v-.024h-.024A31.141 31.141 0 0 0 11.042.9a30.131 30.131 0 0 0-9.969 3.124h-.024v.024a20.757 20.757 0 0 0 3.944 17.035 21.648 21.648 0 0 0 6.073 5.4h.048a22.252 22.252 0 0 0 6.049-5.4z" transform="translate(-.091 -.104)"/>
+                            <g id="Grupo_512">
+                                <path id="Caminho_51152" fill="url(#radial-gradient)" d="M.487 3.366a24.434 24.434 0 0 0-.169 8.348c.048.266.024.145.024.145h10.7V.027A31.849 31.849 0 0 0 .487 3.366z" transform="translate(-.038 -.027)"/>
+                                <path id="Caminho_51153" fill="url(#radial-gradient-2)" d="M22.627 3.366a23.993 23.993 0 0 1 .121 8.493h-10.7V.027a31.871 31.871 0 0 1 10.579 3.339z" transform="translate(-1.102 -.027)"/>
+                                <path id="Caminho_51154" fill="url(#radial-gradient-3)" d="M11.067 28.35V13.009H.372c1.645 10.356 10.7 15.341 10.7 15.341z" transform="translate(-.067 -1.176)"/>
+                                <path id="Caminho_51155" fill="url(#radial-gradient-4)" d="M22.051 15.985s.6-2.178.726-2.976H12.106V28.35a23.382 23.382 0 0 0 9.945-12.365z" transform="translate(-1.107 -1.176)"/>
+                            </g>
+                        </g>
+                        <g id="Grupo_514" transform="translate(26.147 8.154)">
+                            <path id="Caminho_51156" d="M.392 8.858a4.519 4.519 0 0 0 1.887.411c1.065 0 1.573-.508 1.573-1.186 0-.774-.508-1.137-1.476-1.718A3.578 3.578 0 0 1 .2 3.413C.2 1.72 1.432.292 3.828.292a4.136 4.136 0 0 1 1.815.387L5.28 2.446a2.861 2.861 0 0 0-1.48-.363c-.944 0-1.428.532-1.428 1.113 0 .629.339.968 1.6 1.645a3.411 3.411 0 0 1 2.082 3.025c0 1.936-1.549 3.218-3.8 3.218a5.226 5.226 0 0 1-2.2-.435l.338-1.791z" class="cls-7" transform="translate(-.053 -.219)"/>
+                            <path id="Caminho_51157" d="M10.323.372v10.6H8.1V.372z" class="cls-7" transform="translate(-.766 -.226)"/>
+                            <path id="Caminho_51158" d="M13.9 2.257h-2.033V.345h6.315v1.912h-2.056v8.687H13.9z" class="cls-7" transform="translate(-1.1 -.224)"/>
+                            <path id="Caminho_51159" d="M24.934 6.3H22.3v2.855h2.976v1.791h-5.2V.372h5.004v1.79h-2.759v2.444h2.637V6.3z" class="cls-7" transform="translate(-1.826 -.226)"/>
+                            <path id="Caminho_51160" d="M30.425.512a12.917 12.917 0 0 1 2.54-.193 4.672 4.672 0 0 1 2.928.75 2.35 2.35 0 0 1 .871 1.912A2.479 2.479 0 0 1 35.095 5.3v.048a2.582 2.582 0 0 1 2.057 2.541 2.823 2.823 0 0 1-.852 2.084c-.678.7-1.839 1.065-3.775 1.065a15.52 15.52 0 0 1-2.081-.121V.512zm2.25 4.21h.484a1.433 1.433 0 0 0 1.428-1.5 1.227 1.227 0 0 0-1.307-1.379 1.887 1.887 0 0 0-.581.073v2.806zm0 4.694a2.939 2.939 0 0 0 .484.024 1.51 1.51 0 0 0 1.645-1.6 1.574 1.574 0 0 0-1.67-1.621h-.484v3.198z" class="cls-7" transform="translate(-2.743 -.222)"/>
+                            <path id="Caminho_51161" d="M39.478.372H41.7v8.856h2.952v1.742h-5.174z" class="cls-7" transform="translate(-3.545 -.226)"/>
+                            <path id="Caminho_51162" d="M48.819.372v10.6h-2.226V.372z" class="cls-7" transform="translate(-4.175 -.226)"/>
+                            <path id="Caminho_51163" d="M51.239 10.97V.372H53.3l1.766 4.162c.339.823.9 2.178 1.234 3.1h.024c-.073-1.113-.218-2.952-.218-4.912V.372h1.96v10.6h-2.06l-1.767-4.019a27.83 27.83 0 0 1-1.162-3.194h-.024c.048 1.065.145 2.71.145 4.839v2.4h-1.96z" class="cls-7" transform="translate(-4.587 -.226)"/>
+                            <path id="Caminho_51164" d="M60.876.512a11.53 11.53 0 0 1 2.275-.193 4.664 4.664 0 0 1 3.194.944c.992.823 1.5 2.226 1.5 4.283 0 2.129-.6 3.654-1.6 4.476a5.026 5.026 0 0 1-3.509 1.016 17.029 17.029 0 0 1-1.839-.121V.512zm2.25 8.808a1.96 1.96 0 0 0 .387.024c1.065 0 2.008-.968 2.008-3.9 0-2.178-.6-3.484-1.96-3.484a1.269 1.269 0 0 0-.436.048V9.32z" class="cls-7" transform="translate(-5.441 -.222)"/>
+                            <path id="Caminho_51165" d="M71.527 8.55l-.508 2.42h-2.178L71.333.372h2.686l2.226 10.6h-2.178l-.484-2.42zm1.863-1.621L73 4.7c-.121-.653-.266-1.694-.387-2.4h-.048c-.121.7-.29 1.815-.411 2.42l-.436 2.2z" class="cls-7" transform="translate(-6.146 -.226)"/>
+                            <path id="Caminho_51166" d="M78.345.512A11.53 11.53 0 0 1 80.62.319a4.664 4.664 0 0 1 3.194.944c.992.823 1.5 2.226 1.5 4.283 0 2.129-.6 3.654-1.6 4.476a5.027 5.027 0 0 1-3.509 1.016 17.032 17.032 0 0 1-1.839-.121V.512zM80.6 9.32a1.959 1.959 0 0 0 .387.024c1.065 0 2.008-.968 2.008-3.9 0-2.178-.6-3.484-1.96-3.484a1.269 1.269 0 0 0-.435.048V9.32z" class="cls-7" transform="translate(-6.988 -.222)"/>
+                            <path id="Caminho_51167" d="M94.276 5.463c0 3.993-1.524 5.614-3.726 5.614-2.613 0-3.63-2.541-3.63-5.469 0-2.9 1.234-5.4 3.8-5.4 2.783.024 3.557 2.831 3.557 5.251zm-5.033.194c0 2.4.484 3.63 1.4 3.63.944 0 1.307-1.573 1.307-3.726 0-1.863-.315-3.533-1.307-3.533-.9 0-1.4 1.355-1.4 3.63z" class="cls-7" transform="translate(-7.748 -.212)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

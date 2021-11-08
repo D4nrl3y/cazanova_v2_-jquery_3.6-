@@ -1,0 +1,43 @@
+{% set icons = [
+    {
+        'id': 3,
+        'icon': 'icon-informatica'
+    },  
+    {
+        'id': 5,
+        'icon': 'icon-impressao'
+    },
+    {
+        'id': 7,
+        'icon': 'icon-hardware'
+    },
+    {
+        'id': 9,
+        'icon': 'icon-gamer'
+    },
+    {
+        'id': 11,
+        'icon': 'icon-automacao'
+    },
+    {
+        'id': 13,
+        'icon': 'icon-vigilancia'
+    },
+] %}
+
+<div class="get-category">
+    {% set loopActive = 1 %}
+    {% for id in listCategory %}
+    {% set itemCategory = Categories({'id': id }) %}
+    {% if itemCategory|length %}
+    {% set iconActive = '' %}
+    {% for icon in icons %}
+    {% if icon.id == itemCategory.id %}
+    {% set iconActive = icon.icon %}
+    {% endif %}
+    {% endfor %}
+    <div class="button-category{{ loopActive ? ' active' }}" tabindex="0" role="button">{% if iconActive %}<span class="icon {{ iconActive }}"></span>{% endif %}{{ itemCategory.name }}</div>
+    {% set loopActive = 0 %}
+    {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,61 @@
+
+{% set commentsList = product.comments %}
+<div class="section section-reviews" data-item-tab="Opinião de quem já comprou">
+    <h2 class="title-section-product">Opinião de quem já comprou</h2>
+    <div class="comments">
+        <div class="list">
+            {% for comment in commentsList %}
+            <div class="comment">
+                <div class="line-star" data-star="{{ comment.rating }}"></div>
+                <div class="name">{{ comment.customer.name }}</div>
+                <p class="desc">{{ comment.comment }}</p>
+            </div>
+            {% endfor %}
+            {% if not commentsList %}
+            <p class="sub-text">Este produto ainda não foi avaliado.</p>
+            {% endif %}
+        </div>
+        <div class="msg">Tem esse produto? Faça sua avaliação!</div>
+        <a href="/loja/login_layout.php?loja={{ store.id }}&amp;origem=comentario_produto&amp;IdProd={{ product.id }}" class="button button-comment transparent tray-hide" data-logged-user="false" role="button" tabindex="0">Escrever avaliação</a>
+        <div class="button button-comment transparent tray-hide" data-logged-user="true" role="button" tabindex="0">Escrever avaliação</div>
+        <div id="comentarios" class="comments item-tab show-comments">
+            <div data-logged-user="true" class="tray-hide form-comments">
+                <div id="comentario_cliente" class="tray-hide">
+                    <form id="form-comments" class="tray-hide" data-logged-user="true" action="/mvc/store/product/add_comment?loja={{ store.id }}" method="post">
+                        <input disabled name="nome_coment" id="nome_coment" class="hidden" type="text" size="30" value="" required data-message="Campo nome obrigatório. Digite o seu nome completo por favor." data-input-customer="name" />
+                        <input disabled name="email_coment" id="email_coment" class="hidden" type="text" size="40" value="" required data-message="Campo email obrigatório. Digite o seu email por favor." data-input-customer="email" />
+                        <label>
+                            <input type="checkbox" class="checkbox" value="1" name="ProductComment[show_email]" id="exibe_email" /> Mostrar meu e-mail
+                        </label>
+                        <label>
+                            <span class="text">Mensagem</span>
+                            <textarea class="textarea" rows="5" name="ProductComment[comment]" id="mensagem_coment" cols="1" style="width: 99%" required data-message="Campo mensagem obrigatório, digite a mensagem por favor"></textarea>
+                        </label>
+                        <div>- Máximo de <span id='restante'>512</span> caracteres.</div>
+                        <br />
+                        <div class="text-star">Clique para Avaliar</div>
+                        <div class="rateBlock">
+                            <ul class="stars">
+                                <li class="starn" data-id="1" data-message="Ruim"></li>
+                                <li class="starn" data-id="2" data-message="Regular"></li>
+                                <li class="starn" data-id="3" data-message="Bom"></li>
+                                <li class="starn" data-id="4" data-message="Ótimo"></li>
+                                <li class="starn" data-id="5" data-message="Excelente"></li>
+                                <li class="nota ajuste-nota">Avaliação: <strong id="rate"></strong></li>
+                            </ul>
+                        </div>
+                        <input type="text" style="display: none;" name="ProductComment[rating]" id="nota_comentario" value="" required data-message="Avaliação do produto obrigatória, dê sua avaliação por favor." />
+                        <input type="hidden" name="ProductComment[product_id]" value="{{ product.id }}">
+                        <input type="hidden" name="ProductComment[customer_id]" value="" data-input-customer="id">
+                        <button id="bt-submit-comments" class="botao-commerce">Enviar</button>
+                    </form>
+                    <div id="div_erro">
+                        <div class="blocoAlerta" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="blocoSucesso" style="display: none;">Seu comentário foi enviado com sucesso, Obrigado por opinar em nossa loja</div>
+            </div>
+
+        </div>
+    </div>
+</div>

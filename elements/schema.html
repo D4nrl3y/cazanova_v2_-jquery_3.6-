@@ -1,0 +1,65 @@
+{% if not product.upon_request %}
+<script type='application/ld+json'>
+{
+  "@context": "http://schema.org",
+  "@type": "Product",
+  "name": "{{ product.name }}",
+  {% if product.images[0].full %}
+  "image": "{{ product.images[0].full }}",
+  {% endif %}
+  "sku": "{{ product.id }}",
+  {% if product.ean %}
+  "mpn": "{{ product.ean }}",
+  {% endif %}
+  {% if product.description_small %}
+  "description": "{{ product.description_small }}",
+  {% endif %}
+  {% if product.ranking.count %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ product.ranking.rating }}",
+    "reviewCount": "{{ product.ranking.count }}"
+  },
+  {% endif %}
+  {% if product.comments %}
+  {% set best = 0 %}{% set low = 5 %}{% for comments in product.comments %}{% if best < comments.rating %} {% set best = comments.rating %} {% endif %} {% if low > comments.rating %}{% set low = comments.rating %}{% endif %}{% endfor %}  
+  "review": [
+    {% for comments in product.comments %}
+    {
+      "@type": "Review",
+      "author": "{{ comments.customer.name }}",
+      "datePublished": "{{ comments.date }}",
+      {% if comments.comment %}"description": "{{ comments.comment }}",{% endif %}
+      {% if comments.title %}
+      "name": "{{ comments.title }}",
+      {% endif %}
+      "reviewRating": {
+        "@type": "Rating",
+        "bestRating": "{{ best }}",
+        "ratingValue": "{{ comments.rating }}",
+        "worstRating": "{{ low }}"
+      }
+    }{% if loop.index != product.comments|length %},{% endif %}
+    {% endfor %}
+  ],  
+  {% endif %}
+  {% if product.brand %}
+  "brand": {
+    "@type": "Thing",
+    "name": "{{ product.brand }}"
+  },
+  {% endif %}
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ product.link|split('?')[0] }}",
+    "priceCurrency": "BRL",
+    "price": "{{ product.price_offer > 0 ? product.price_offer : product.price }}",
+    {% if product.price_offer > 0 %}
+    "priceValidUntil": "{{ product.end_promotion }}",
+    {% endif %}
+    "itemCondition": "http://schema.org/NewCondition",
+    "availability": " {{ product.available and (product.stock > 0 or settings.without_stock_sale) ? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock' }}"
+  }
+}
+</script>
+{% endif %}

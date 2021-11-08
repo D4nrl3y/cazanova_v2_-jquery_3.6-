@@ -1,0 +1,21 @@
+    <span class="target featured category-open" role="button" tabindex="0">
+        <span class="icon icon-menu">            
+            </span>Todas os departamentos<span class="icon icon-right"></span>
+    </span>
+    <div class="list-category">
+        <div class="prev" tabindex="0" role="button"><span class="icon icon-left"></span>Categorias</div>
+        {% for list in categories %}
+        <div class="item">
+            <a class="target{{list.children ? ' subs' }}" href="{{ list.link }}" data-id="{{ list.id }}">
+                <span class="icon-cat-mobile"></span>
+                <span>{{ list.name }}</span>
+                {% if list.children %}
+                <i class="icon icon-right"></i>
+                {% endif %}
+            </a>
+            {% if list.children  %}
+            {% element 'snippets/loop-category' {'category': list } %}
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>

@@ -1,0 +1,15 @@
+<div class="container">
+    {% element 'snippets/breadcrumb' { "list": 
+    [
+        {
+            "name": "Identificação",
+            "link": store.current_url
+        }
+    ]
+    } %}
+    <div class="login-header">
+        <div class="title">Identificação</div>
+    </div>
+    
+    {{ content_for_layout }}
+</div>

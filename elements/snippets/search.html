@@ -1,0 +1,12 @@
+<div class="search">
+    <form role="form" action="{{ links.search }}" method="get" data-search="suggestion">
+        <input type="hidden" name="loja" value="{{ store.id }}">
+        <input class="search-key" type="search" data-input="suggestion" placeholder="{{ placeholder }}" name="palavra_busca" required>
+        <button class="search-button icon icon-search" type="submit" aria-label="Search">
+        	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.966" height="26" viewBox="0 0 23.966 26">
+			  <defs><style>.search-icon-1 {fill: #000000;}.search-icon-2 {clip-path: url(#clip-path);}</style><clipPath><rect class="search-icon-1" width="23.966" height="26" transform="translate(1690.09 56)"/></clipPath></defs><g data-name="ic:top 1" class="search-icon-2" transform="translate(-1690.09 -56)"><g data-name="search (3)" transform="translate(1687.403 54.345)"><path data-name="Caminho 56170" class="search-icon-1" d="M13.433,24.18A10.747,10.747,0,1,1,24.18,13.433,10.762,10.762,0,0,1,13.433,24.18Zm0-19.539a8.756,8.756,0,0,0-8.793,8.793,8.915,8.915,0,0,0,17.83,0A9.047,9.047,0,0,0,13.433,4.641Z"/>
+			  <path data-name="Caminho 56171" class="search-icon-1" d="M25.645,26.622a.933.933,0,0,1-.611-.244l-5.251-5.251a.95.95,0,0,1,1.343-1.343l5.251,5.251a.958.958,0,0,1,0,1.343A1.736,1.736,0,0,1,25.645,26.622Z"/></g></g>
+			</svg>
+        </button>
+    </form>
+</div>

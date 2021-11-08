@@ -1,0 +1,13 @@
+{% if banners.extra8 %}
+	<div class="section-banners{{ settings.banner_info_bg == '#ffffff' or not(settings.banner_info_bg) ? ' reset-margin-top' }} margin-top block">
+	    <div class="list flex f-wrap row">
+			{% for slide in banners.extra8.slides %}
+				<div class="item">
+		            <a {{ slide.link ? 'href="'~slide.link~'"' }} target="{{ slide.target }}">
+		                <img class="" height="{{ slide.height }}" src="{{ slide.image }}">
+		            </a> 
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

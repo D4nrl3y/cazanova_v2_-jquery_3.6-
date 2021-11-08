@@ -1,0 +1,33 @@
+<div class="section section-categories">
+    <h2 class="title-section">
+        <span>Compre por</span> Categoria
+    </h2>
+    <div class="relative">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {% for category in categories[0].children %}
+                <div class="swiper-slide">
+                    <a href="{{ category.link }}">
+                        <span class="image">
+                            <img class="swiper-lazy" src="{{ image }}" data-src="{{ category.image[0] }}" alt="{{ category.name }}">
+                        </span>
+                        <span class="name">{{ category.name }}</span>
+                    </a>
+                </div>
+                {% endfor %}
+                {% for category in categories[1].children %}
+                <div class="swiper-slide">
+                    <a href="{{ category.link }}">
+                        <span class="image">
+                            <img class="swiper-lazy" src="{{ image }}" data-src="{{ category.images[0] }}" alt="{{ category.name }}">
+                        </span>
+                        <span class="name">{{ category.name }}</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="arrow-slide position-normal prev"></div>
+        <div class="arrow-slide position-normal next"></div>
+    </div>
+</div>

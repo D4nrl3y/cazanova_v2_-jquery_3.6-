@@ -1,0 +1,41 @@
+{% if paginate.params.pageCount > 1 %}
+<div class="pagination">
+{#     <div class="load-button">
+        <div class="button transparent" tabindex="0" role="button">
+            <span>Carregar mais</span><span class="icon icon-loaded"></span>
+        </div>
+        <div class="arrow-top" tabindex="0" role="button" data-js="up-scroll">
+            <span class="icon icon-arrow-top"></span>
+            <span>Voltar para o topo</span>
+        </div>
+    </div> #}
+    <div class="paginate-links flex align-center justify-between" data-page-load="1" data-pages="{{ paginate.params.pageCount }}">
+        <span class="paginate-text">{{ paginate.counter('Exibindo <strong>{:count} produtos em {:pages} p&aacute;ginas</strong>') }}</span>
+        
+        <div class="paginate-buttons flex align-center">
+            {% if paginate.params.pageCount > 1 %}
+                {% if false %}
+                    {{ paginate.first('<<', {'class': 'page-first page-link'}) }}
+                {% endif %}
+                {% if paginate.hasPrev %}
+                    {{ paginate.prev('Anterior', {'class': 'page-prev page-link'}) }}
+                {% endif %}
+            
+                {{ paginate.numbers({
+                    'modulus': 3,
+                    'separator': '',
+                    'class': 'page-link',
+                    'currentClass': 'page-current'
+                }) }}
+            
+                {% if paginate.hasNext %}
+                    {{ paginate.next('Próxima', {'class': 'page-next page-link'}) }}
+                {% endif %}
+            
+                {{ paginate.last('', {'class': 'page-last page-link'}) }}
+            
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}

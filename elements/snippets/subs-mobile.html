@@ -1,0 +1,8 @@
+<a href="{{ category.link }}">Ver tudo em {{ category.name }}</a>
+{% for list in category.children %}
+
+    <a href="{{ list.link }}{{ list.children ? ' item-subs' }}">{{ list.name }}{% if list.children %}{% endif %}</a>
+    {% if list.children %}
+    {% element 'snippets/subs-mobile' {'category': list } %}
+    {% endif %}
+{% endfor %}

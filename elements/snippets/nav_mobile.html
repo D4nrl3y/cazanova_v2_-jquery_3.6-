@@ -1,0 +1,190 @@
+<div class="fixed-sub">
+    {#
+    <div role="button" tabindex="0" class="close icon icon-close" data-js="close"></div> #}
+    <div class="relative">
+        {#
+        <a class="area-text tray-hide" href="{{ links.login }}" data-logged-user="false">
+            <span class="area-right">
+                <span class="title">Minha conta</span>
+            </span>
+        </a> #}
+        <span class="target featured open-account" role="button" tabindex="0">
+            <span class="icon icon-account"></span> Entrar ou criar conta
+        <span class="icon icon-right"></span>
+        </span>
+
+        <div class="block-absolute-account">
+            <div class="header-modal">
+                <div class="title-modal flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><style>.user-ic-1 {fill: #000000;}</style><clipPath><rect class="user-ic-1" width="28" height="28" transform="translate(1300 40)"/></clipPath></defs><g data-name="ic:top 4" class="user-ic-2" transform="translate(-1300 -40)"><g data-name="482636" transform="translate(1300.269 40.268)"><path data-name="Caminho 56163" class="user-ic-1" d="M13.732-.268a14,14,0,1,0,14,14A14.017,14.017,0,0,0,13.732-.268Zm0,19.992a20.524,20.524,0,0,1,9.022,2.371,12.261,12.261,0,0,1-18.044,0A20.524,20.524,0,0,1,13.732,19.723Zm0-18.313A12.336,12.336,0,0,1,26.053,13.732a12.188,12.188,0,0,1-2.226,7.032c-.07-.043-.134-.075-.2-.113h0a22.261,22.261,0,0,0-9.9-2.612,22.3,22.3,0,0,0-9.9,2.612c-.064.032-.129.07-.2.113a12.3,12.3,0,0,1,10.1-19.353Z"/><path data-name="Caminho 56164" class="user-ic-1" d="M13.732,3.739a6.85,6.85,0,1,0,6.85,6.85A6.859,6.859,0,0,0,13.732,3.739Zm0,12.015A5.166,5.166,0,1,1,18.9,10.589,5.171,5.171,0,0,1,13.732,15.754Z"/></g></g>
+                        </svg>
+                    </div>
+                    <span class="text">acesso r�pido</span>
+                    <div class="area-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                            <defs><clipPath><path d="M0 0H12V12H0z" class="close-ic-1" transform="translate(1781.737 -28.886)"/></clipPath><style>.close-ic-1{fill:#474e5f}</style></defs><g transform="translate(-1781.737 28.886)"><path d="M14.16 13.241l4.594-4.594a.65.65 0 0 0-.919-.919l-4.594 4.594-4.593-4.51a.65.65 0 0 0-.919.919l4.594 4.594-4.594 4.593a.655.655 0 0 0 0 .919.606.606 0 0 0 .835 0l4.594-4.594 4.594 4.594a.606.606 0 0 0 .835 0 .655.655 0 0 0 0-.919z" class="close-ic-1" transform="translate(1774.764 -36.234)"/></g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-content">
+                <ul>
+                    <li><a href="{{ links.account }}">Minha Conta</a></li>
+                    <li><a href="" class="rastreio-link">Rastrear meu pedido</a></li>
+                    <li><a href="{{ links.contact }}">Atendimento</a></li>
+                </ul>
+                <div class="tray-hide" data-logged-user="false">
+                    <a href="{{ links.login }}" class="button login large">Entrar</a>
+                    <div class="second-content">
+                        <div class="text">Ainda n�o possui uma conta conosco?</div>
+                        <a class="button large" href="{{ links.register }}">cadastre-se aqui</a>
+                    </div>
+                </div>
+                <div class="user-logged tray-hide" data-logged-user="true">
+                    <a href="{{ links.logout }}" class="button login large">Sair</a>
+                </div>
+            </div>
+            <div class="rastreio-block">
+                <div class="header-rastreio flex align-center">
+                    <div class="area-close-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"><defs><clipPath><path fill="#fff" d="M0 0H14V14H0z"></path></clipPath></defs><g><path fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.487px" d="M14.871 17.845L8.923 11.9l5.948-5.948" transform="translate(-5.051 -4.897)"></path></g></svg>
+                    </div>
+                    <span class="text">Voltar</span>
+                </div>
+                <div class="sub-header-rastreio flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="40" viewBox="0 0 52 40"><defs><clipPath><path d="M0 0H52V40H0z" class="truck-ic-blue-1" transform="translate(267 5947)"></path></clipPath><style>.truck-ic-blue-1{fill:#000000}</style></defs><g transform="translate(-267 -5947)"><path d="M48.1 13.158l-7.608-7.613a1.42 1.42 0 0 0-1.005-.416H33.3v-2.9A5.234 5.234 0 0 0 28.067-3H5.228A5.234 5.234 0 0 0 0 2.228V24.06a5.233 5.233 0 0 0 5.228 5.227h1.005a7.132 7.132 0 0 0 13.977 0h8.1a7.132 7.132 0 0 0 13.978 0H47.1a1.421 1.421 0 0 0 1.422-1.422v-13.7a1.42 1.42 0 0 0-.416-1.005zm-9.2-5.186l4.77 4.77H33.3v-4.77zM2.843 24.06V2.228A2.388 2.388 0 0 1 5.228-.157h22.839a2.388 2.388 0 0 1 2.385 2.385v20.415a7.129 7.129 0 0 0-2.141 3.8h-8.1a7.132 7.132 0 0 0-13.977 0H5.228a2.387 2.387 0 0 1-2.385-2.383zm10.379 8.095a4.289 4.289 0 1 1 4.288-4.289 4.293 4.293 0 0 1-4.288 4.289zm22.078 0a4.289 4.289 0 1 1 4.288-4.289 4.294 4.294 0 0 1-4.288 4.289zm6.989-5.711a7.126 7.126 0 0 0-8.989-5.42v-5.439h12.378v10.86h-3.39zm0 0" class="truck-ic-blue-1" transform="translate(269.001 5950.863)"></path></g></svg>
+                    </div>
+                    <span class="text">Rastreie seu pedido</span>
+                </div>
+                <div class="rastreio-content">
+                    <div class="rastreio">
+                        <span>Digite o c�digo de Rastreio e Acompanhe:</span>
+                        <form target="_blank" method="post" class="rastreie flex f-wrap" action="https://www2.correios.com.br/sistemas/rastreamento/ctrl/ctrlRastreamento.cfm?">
+                            <input type="hidden" name="track" value="track">
+                            <input autocomplete="off" type="text" name="objetos" placeholder="Digite seu c�digo aqui">
+                            <button class="botao-commerce">Rastrear</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% element 'snippets/category-mobile' %}
+
+        <span class="target featured" role="button" tabindex="0" data-js="open_cart">
+            <span class="icon icon-carrinho"></span> Carrinho de compras
+        <span class="icon icon-right"></span>
+        </span>
+
+        <span class="target featured open-ajuda" role="button" tabindex="0">
+            <span class="icon icon-ajuda"></span> Precisa de ajuda?
+        <span class="icon icon-right"></span>
+        </span>
+
+        <div class="block-absolute-ajuda help-abs-content">
+            <div class="header-modal">
+                <div class="title-modal flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><style>.user-ic-1 {fill: #000000;}</style><clipPath><rect class="user-ic-1" width="28" height="28" transform="translate(1300 40)"/></clipPath></defs><g data-name="ic:top 4" class="user-ic-2" transform="translate(-1300 -40)"><g data-name="482636" transform="translate(1300.269 40.268)"><path data-name="Caminho 56163" class="user-ic-1" d="M13.732-.268a14,14,0,1,0,14,14A14.017,14.017,0,0,0,13.732-.268Zm0,19.992a20.524,20.524,0,0,1,9.022,2.371,12.261,12.261,0,0,1-18.044,0A20.524,20.524,0,0,1,13.732,19.723Zm0-18.313A12.336,12.336,0,0,1,26.053,13.732a12.188,12.188,0,0,1-2.226,7.032c-.07-.043-.134-.075-.2-.113h0a22.261,22.261,0,0,0-9.9-2.612,22.3,22.3,0,0,0-9.9,2.612c-.064.032-.129.07-.2.113a12.3,12.3,0,0,1,10.1-19.353Z"/><path data-name="Caminho 56164" class="user-ic-1" d="M13.732,3.739a6.85,6.85,0,1,0,6.85,6.85A6.859,6.859,0,0,0,13.732,3.739Zm0,12.015A5.166,5.166,0,1,1,18.9,10.589,5.171,5.171,0,0,1,13.732,15.754Z"/></g></g>
+                        </svg>
+                    </div>
+                    <span class="text">Precisa de ajuda?</span>
+                    <div class="area-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                            <defs><clipPath><path d="M0 0H12V12H0z" class="close-ic-1" transform="translate(1781.737 -28.886)"/></clipPath><style>.close-ic-1{fill:#474e5f}</style></defs><g transform="translate(-1781.737 28.886)"><path d="M14.16 13.241l4.594-4.594a.65.65 0 0 0-.919-.919l-4.594 4.594-4.593-4.51a.65.65 0 0 0-.919.919l4.594 4.594-4.594 4.593a.655.655 0 0 0 0 .919.606.606 0 0 0 .835 0l4.594-4.594 4.594 4.594a.606.606 0 0 0 .835 0 .655.655 0 0 0 0-.919z" class="close-ic-1" transform="translate(1774.764 -36.234)"/></g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-content">
+                <div class="simple-text">
+                    <span class="blue">Cazanova Material de Constru��o e Distribui��o LTDA</span>
+                    <span class="gray">R Le�o Dourado, n� 40 - S�o Francisco <br/>
+                    Caruaru/PE - CEP 55008-010 </span>
+                </div>
+
+                <a href="tel:8121031313" class="phone-help flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <defs><clipPath><path fill="#fe800a" d="M0 0H16V16H0z"/></clipPath></defs><g><path fill="none" stroke="#fe800a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4px" d="M10.7 3.554a3.554 3.554 0 0 1 2.808 2.808M10.7.711a6.4 6.4 0 0 1 5.65 5.644m-.711 5.673v2.132a1.422 1.422 0 0 1-1.55 1.422A14.068 14.068 0 0 1 7.954 13.4a13.862 13.862 0 0 1-4.265-4.265 14.068 14.068 0 0 1-2.182-6.164 1.422 1.422 0 0 1 1.415-1.55h2.132a1.422 1.422 0 0 1 1.422 1.223 9.127 9.127 0 0 0 .5 2 1.422 1.422 0 0 1-.32 1.5l-.9.9a11.374 11.374 0 0 0 4.265 4.265l.9-.9a1.422 1.422 0 0 1 1.5-.32 9.127 9.127 0 0 0 2 .5 1.422 1.422 0 0 1 1.223 1.443z" transform="translate(-.953 -.122)"/></g>
+                        </svg>
+                    </div>
+                    <span>(81) 2103-1313</span>
+                </a>
+
+                <a href="https://api.whatsapp.com/send?phone=5581998880084" class="phone-help flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                            <defs><clipPath><path d="M0 0H16V16H0z" class="whatsapp-ic-1"/></clipPath><style>.whatsapp-ic-1{fill:#fe800a}</style>
+                            </defs><g><g transform="translate(.008)"><path d="M13.623 2.323a8 8 0 0 0-11.27 0A7.849 7.849 0 0 0 0 7.926a7.89 7.89 0 0 0 .974 3.745L.022 16 4.4 15a8.009 8.009 0 0 0 3.592.853 7.971 7.971 0 0 0 5.639-2.322 7.844 7.844 0 0 0-.008-11.213zM7.992 14.609a6.75 6.75 0 0 1-3.211-.809l-.207-.112-2.909.662.635-2.877-.122-.21a6.675 6.675 0 0 1-.926-3.335 6.741 6.741 0 0 1 11.492-4.72 6.638 6.638 0 0 1 1.995 4.723 6.721 6.721 0 0 1-6.744 6.678zm0 0" class="whatsapp-ic-1"/><path d="M5.817 4.433h-.35a.673.673 0 0 0-.487.228 2.04 2.04 0 0 0-.64 1.52 3.539 3.539 0 0 0 .746 1.884 7.494 7.494 0 0 0 3.123 2.75c1.544.607 1.859.486 2.194.456a1.846 1.846 0 0 0 1.234-.866 1.519 1.519 0 0 0 .107-.866c-.046-.076-.168-.121-.35-.213s-1.079-.539-1.246-.6-.289-.091-.411.091-.481.6-.588.725-.213.137-.4.046a5.055 5.055 0 0 1-1.464-.908A5.6 5.6 0 0 1 6.26 7.4c-.107-.182-.011-.281.08-.372s.193-.193.285-.3a1.232 1.232 0 0 0 .178-.3.335.335 0 0 0-.015-.328c-.046-.091-.4-.992-.559-1.353-.137-.3-.281-.314-.411-.319zm0 0" class="whatsapp-ic-1"/></g></g>
+                        </svg>
+                    </div>
+                    <span>(81) 9 9888-0084</span>
+                </a>
+
+                <span class="time-open-text">
+                    <span class="gray">
+                        Segunda � sexta-feira das 08:00 �s 18:00.
+                        S�bado das 08:00 �s 13:00.
+                    </span>
+                </span>
+                <a href="{{ store.url }}/" class="button-fale-conosco">fale conosco</a>
+            </div>
+
+
+        </div>
+
+        {#
+        <a class="target" href="{{ links.orders }}"><span class="icon icon-espec"></span>Carrinho de compras<span class="icon icon-target"></span></a>
+        <a class="target" href="{{ links.orders }}"><span class="icon icon-espec"></span>Precisa de ajuda?<span class="icon icon-target"></span></a>
+        <a class="target" href="{{ links.contact }}"><span class="icon icon-Ajuda"></span>Central de atendimento<span class="icon icon-target"></span></a> #} {#
+        <div class="area-text tray-hide" data-logged-user="true">
+            <span class="icon icon-cliente"></span>
+            <span class="area-right">
+                <span class="title" data-js="name-user"></span>
+            <span class="sub" data-js="email-user"></span>
+            </span>
+            <div class="down-mobile icon icon-arrow-bottom"></div>
+        </div> #}
+
+
+
+
+        <div class="content-account">
+            <div class="tray-hide overflow" data-logged-user="true">
+
+                {# <span class="target" role="butt on" tabindex="0"><span class="icon icon-shipping"></span>Rastrear pedido<span class="icon icon-top"></span></span>
+                <div class="overflow">
+                    <div class="shipping-register">
+                        <p class="des">Para acompanhar a entrega do seu pedido, insira abaixo o seu c�digo de rastreamento:</p>
+                        <form data-js="submit-shipping" method="POST" target="_blank" action="https://www2.correios.com.br/sistemas/rastreamento/ctrl/ctrlRastreamento.cfm">
+                            <input type="text" name="objetos" placeholder="Digite o seu c�digo">
+                            <button class="button uppercase">Rastrear pedido</button>
+                        </form>
+                    </div>
+                </div> #}
+
+                <a class="target tray-hide" data-logged-user="true" href="{{ links.logout }}"><span class="icon icon-exit"></span>Sair</a>
+            </div>
+            <div class="overflow">
+                <div class="contact-content">
+                    <div>
+                        {% element 'snippets/info-contact' %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-target">
+                {% set list = [] %} {% for i in 1..5 %} {% set title = attribute(settings, 'nav_'~i~'_text') %} {% set link = attribute(settings, 'nav_'~i~'_link') %} {% if title %} {% set list = list|merge([{"title": title, "link": link }]) %} {% endif %} {% endfor
+                %} {% for item in list %}
+                <a class="target" href="{{ item.link }}"><span>{{ item.title }}</span><span class="icon icon-target"></span></a> {% endfor %}
+            </div>
+
+            <div class="close-nav-mobile close" data-js="close">voltar para o site</div>
+        </div>
+    </div>
+</div>

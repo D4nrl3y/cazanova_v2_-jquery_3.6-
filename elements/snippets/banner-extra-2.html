@@ -1,0 +1,13 @@
+ {% if banners.extra7 %}
+	<div class="section-banners">
+	    <div class="list flex row">
+			{% for slide in banners.extra7.slides %}
+				<div class="item">
+		            <a {{ slide.link ? 'href="'~slide.link~'"' }} target="{{ slide.target }}">
+		                <img class="" height="{{ slide.height }}" src="{{ slide.image }}">
+		            </a> 
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

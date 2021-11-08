@@ -1,0 +1,44 @@
+<pre>{{ dump(paginate) }}</pre>
+{% if paginate or true %}
+    <div class="button" role="button" tabindex="0">Carregar mais produtos<span class="icon-load"></span></div>
+{% endif  %}
+<div class="scroll-top">
+    <span class="icon icon-down"></span>Voltar para o topo
+</div>
+
+<div class="load-button">
+    <pre>{{ dump(paginate) }}</pre>
+    <div class="button yellow large text-black" tabindex="0" role="button">
+        <span>Carregar mais</span><span class="icon icon-loaded"></span>
+    </div>
+    <div class="arrow-top" tabindex="0" role="button" data-js="up-scroll">
+        <span class="icon icon-arrow-top"></span>
+        <span>Voltar para o topo</span>
+    </div>
+</div>
+
+
+    <div class="paginate-links">
+    {% if paginate.params.pageCount > 1 %}
+        {% if false %}
+            {{ paginate.first('<<', {'class': 'page-first page-link'}) }}
+        {% endif %}
+        {% if paginate.hasPrev %}
+            {{ paginate.prev('', {'class': 'page-prev page-link'}) }}
+        {% endif %}
+     
+        {{ paginate.numbers({
+            'modulus': 3,
+            'separator': '',
+            'class': 'page-link',
+            'currentClass': 'page-current'
+        }) }}
+     
+        {% if paginate.hasNext %}
+            {{ paginate.next('', {'class': 'page-next page-link'}) }}
+        {% endif %}
+        {% if false %}
+        {{ paginate.last('>>', {'class': 'page-last page-link'}) }}
+        {% endif %}
+    {% endif %}
+    </div>

@@ -1,0 +1,21 @@
+<div class="newsletter">
+    <div class="container flex">
+        <div class="line-new flex align-center">
+            <span class="icon icon-Newsletter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="83.21" height="64" viewBox="0 0 83.21 64">
+                    <defs><style>.newsletter-ic-1{fill:#fff}</style></defs><g transform="translate(-5.5 -64.5)"><path d="M77.1 151.769a9.28 9.28 0 0 0-9.269-9.269H14.769a9.28 9.28 0 0 0-9.269 9.269v33.855a9.28 9.28 0 0 0 9.269 9.269h53.066a9.28 9.28 0 0 0 9.269-9.269zm-7.548-4.337L41.3 168.448l-28.252-21.016zm2.616 38.192a4.342 4.342 0 0 1-4.337 4.337H14.769a4.342 4.342 0 0 1-4.337-4.337v-33.99L41.3 174.595l30.87-22.961z" class="newsletter-ic-1" transform="translate(0 -66.394)"/><path d="M162.376 105.624V71.769a9.28 9.28 0 0 0-9.269-9.269h-53.066a9.292 9.292 0 0 0-8.189 4.932h61.254a4.342 4.342 0 0 1 4.337 4.337v42.043a9.293 9.293 0 0 0 4.933-8.188z" class="newsletter-ic-1" transform="translate(-73.665 2)"/></g>
+                </svg>
+            </span>
+            <div class="text-area">
+                <h2 class="title-news">Aproveite nossas ofertas</h2>
+                <h3 class="subtitle">Cadastre agora mesmo o seu e-mail e receba as nossas ofertas exclusivas!</h3>
+            </div>
+
+             <form action="/mvc/store/newsletter/" method="POST" class="flex align-center">
+                <input type="hidden" name="loja" value="{{ store.id }}">
+                <input spellcheck="false" required="" autocomplete="off" name="email" class="text mail" type="email" placeholder="Digite seu e-mail">
+                <button class="button large yellow">Cadastrar</button>
+            </form>
+        </div>    
+    </div>
+</div>

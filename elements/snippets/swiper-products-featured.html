@@ -1,0 +1,14 @@
+<div class="relative">
+    <div class="swiper-container" data-items="{{ items }}">
+        <div class="swiper-wrapper">
+            {% for itemProduct in products %}
+            <div class="swiper-slide">
+                {% element 'snippets/product-featured' { "itemProduct": itemProduct, "slide": slide } %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="arrow-slide position-normal icon icon-arrow-left prev"></div>
+    <div class="arrow-slide position-normal icon icon-arrow-right next"></div>
+    {# <div class="swiper-scrollbar"></div> #}
+</div>

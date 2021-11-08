@@ -1,0 +1,21 @@
+{% if listBanners %}
+<div class="section-show banners">
+    <div class="container">
+        <div class="list-banners">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for list in listBanners %}
+                    <div class="item swiper-slide">
+                        {% element 'snippets/banner' {
+                            'b': list,
+                            'swiperLazy': utils.is_mobile
+                        } %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+{% endif %}

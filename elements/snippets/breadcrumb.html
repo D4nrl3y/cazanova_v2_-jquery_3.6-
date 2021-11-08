@@ -1,0 +1,16 @@
+<div class="breadcrumb flex">
+  <ol class="list" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li>
+          <a href="{{ store.url }}"><span class="icon icon-home"></span>Ínicio</a>
+      </li>
+      {% for l in list %}
+      <li itemprop="itemListElement" itemscope
+      itemtype="https://schema.org/ListItem">
+          <a href="{{ l.link }}" itemprop="item">
+              <span itemprop="name">{{ l.name }}</span>
+          </a>
+          <meta itemprop="position" content="{{ loop.index }}" />
+      </li>
+      {% endfor %}
+  </ol>
+</div>

@@ -1,0 +1,85 @@
+{% if pages.current in 'product' %}
+<div class="modal-theme payment">
+    <div class="overflow">
+        <div class="center">
+            <div class="box-content">
+                <div class="header-modal"><div class="title-modal">Formas de pagamento</div><div class="area-close"><i class="icon icon-logo"></i><i class="icon icon-close" data-close-modal tabindex="0" role="button"></i></div></div>
+                <div class="content">
+                    
+                </div>
+                <div class="append-payment"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</div>
+{% endif %}
+
+{% if pages.current in 'product' %}
+<div class="modal-theme video-modal">
+    <div class="overflow">
+        <div class="center">
+            <div class="box-content">
+                <div role="button" tabindex="0" class="close icon icon-close"></div>
+                <div class="append-video video"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</div>
+{% endif %}
+
+{#
+<div class="modal-theme modal-news">
+    <div class="overflow">
+        <div class="center">
+            <div class="box-content">
+                <div role="button" tabindex="0" class="close icon icon-close"></div>
+                <div class="area-news">
+                    <div class="area-banner">
+                        {% element 'snippets/banner' {'b': banners.extra9, 'afterLazy': true } %}
+                    </div>
+                    <div class="news">
+                        <div class="title">Cadastre-se em <br>
+                            nossa newsletter</div>
+                        <p>para receber nossas novidades 
+                            e ofertas exclusivas por e-mail.</p>
+                            <form action="/mvc/store/newsletter/" method="POST">
+                                <input type="hidden" name="loja" value="{{ store.id }}">
+                                <input spellcheck="false" autocomplete="off" name="name" class="text mail" type="text" placeholder="Digite seu nome">
+                                <input spellcheck="false" required="" autocomplete="off" name="email" class="text mail" type="email" placeholder="Digite seu e-mail">
+                                <button class="button large yellow">Quero me cadastrar!</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</div>
+#}
+{# <div class="modal-theme modal-news-button">
+    <div class="overflow">
+        <div class="center">
+            <div class="box-content">
+                <div role="button" tabindex="0" class="close icon icon-close"></div>
+                <div class="area-news">
+        
+                    <div class="news-button">
+                        <div class="email-icon"></div>
+                        <div class="title">Receba nossas novidades</div>
+                        <p>Cadastre-se para receber nossas novidades e ofertas exclusivas por e-mail.</p>
+                            <form action="/mvc/store/newsletter/" method="POST">
+                                <input type="hidden" name="loja" value="{{ store.id }}">
+                                <input spellcheck="false" required="" autocomplete="off" name="email" class="text mail" type="email" placeholder="Endereço de e-mail">
+                                <button class="button large yellow">Quero me cadastrar!</button>
+                            </form>
+                            <p class="terms">Ao entrar, você concorda com a <a href="/privacidade" target="_blank" rel="noreferrer noopener">Política de privacidade</a> e os <a href="/termos-de-uso" target="_blank" rel="noreferrer noopener">Termos de uso</a> da {{ store.name }}.</p>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</div> #}

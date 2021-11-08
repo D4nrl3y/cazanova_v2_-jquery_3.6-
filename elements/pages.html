@@ -1,0 +1,16 @@
+{% if pages.current in 'contact' %}
+   {% element 'page-contact' %}
+{% elseif pages.current in 'company' %}
+   {% element 'page-sobre' %}
+{% elseif pages.current == 'busca_noticias' %}
+   {% element 'page-posts' %}
+{% elseif pages.current in 'noticia' %}
+   {% element 'page-post' %}
+{% elseif pages.current in 'login' %}
+   {% element 'page-login' %}
+{% elseif pages.current in 'register' %}
+   {% element 'page-register' %}
+   <div class="old-layout-register">
+      {{ content_for_layout }}
+   </div>
+{% endif %}

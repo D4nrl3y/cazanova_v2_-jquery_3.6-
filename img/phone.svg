@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="telefone" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-1{fill:#fcfcfc}.cls-2{fill:#303030}
+        </style>
+    </defs>
+    <g id="Circle_Grid">
+        <circle id="Elipse_186" cx="12" cy="12" r="12" class="cls-1"/>
+    </g>
+    <g id="icon" transform="translate(3.75 5.152)">
+        <path id="Caminho_61693" d="M25.965 40.474c1.315 1.315 2.783 1.989 3.27 1.5l.616-.616a1.2 1.2 0 0 1 1.7 0l1.359 1.359a1.682 1.682 0 0 1 0 2.379l-.956.956c-1.185 1.185-4.735-.445-7.929-3.639a17.29 17.29 0 0 1-3.462-4.713c-.659-1.435-.77-2.618-.177-3.211l.956-.956a1.682 1.682 0 0 1 2.379 0l1.359 1.359a1.2 1.2 0 0 1 0 1.7l-.616.616c-.488.488.185 1.956 1.5 3.271z" class="cls-2" transform="translate(-19.999 -31.993)"/>
+        <path id="Caminho_61694" d="M67.341 28.105v4.378a.629.629 0 0 1-.629.629h-4.64l-1.906 1.666v-1.666h-.656a.629.629 0 0 1-.629-.629v-4.378a.629.629 0 0 1 .629-.629h7.2a.629.629 0 0 1 .629.629z" class="cls-2" transform="translate(-51.591 -27.476)"/>
+        <g id="Grupo_1967" transform="translate(8.497 2.248)">
+            <path id="Caminho_61695" d="M66.458 40.034a.57.57 0 1 1-.167-.4.57.57 0 0 1 .167.4z" class="cls-1" transform="translate(-65.318 -39.464)"/>
+            <path id="Caminho_61696" d="M79.541 40.034a.57.57 0 1 1-.167-.4.57.57 0 0 1 .167.4z" class="cls-1" transform="translate(-75.948 -39.464)"/>
+            <path id="Caminho_61697" d="M92.623 40.034a.57.57 0 1 1-.167-.4.57.57 0 0 1 .167.4z" class="cls-1" transform="translate(-86.577 -39.464)"/>
+        </g>
+    </g>
+</svg>

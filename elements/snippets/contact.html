@@ -1,0 +1,34 @@
+<div class="item-right help">
+    <span class="icon icon-help"></span>
+    <div class="modal-help">
+        <div class="bar">
+            <div class="flex align-center">
+                <span class="icon icon-help"></span>
+                <span class="title">Precisa de ajuda?</span>
+            </div>
+            <div class="close-button" role="button"><span>Fechar</span><span class="icon icon-close"></span></div>
+        </div>
+        <div class="content-area">
+            <img src="{{ asset('img/lifesaver.svg') }}" alt="Icon help">
+            <div class="title">Estamos aqui pra te ajudar!</div>
+            <div class="list-c">
+                {% set tel = settings.phone %}
+                {% set tellink = tel|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+                {% if tel %}
+                <a href="tel:{{ tellink }}">{{ tel }}</a>
+                {% endif %}
+                <div class="clock">{{ Translation('ag_atendimento') }}</div>
+                {% if settings.whatsapp_number %}
+                    {% set whats = settings.whatsapp_number %}
+                    {% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+                    <a href="{{ 'https://api.whatsapp.com/send?l=pt&phone=55'~ link }}" rel="noreferrer" target="_blank" rel="noreferrer noopener" class="whats">
+                        <span class="icon icon-whatsapp"></span> {{ settings.whatsapp_number }}
+                    </a>
+                {% endif %}
+                {% if settings.email_contact %}
+                <a href="mailto:{{ settings.email_contact }}">{{ settings.email_contact }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

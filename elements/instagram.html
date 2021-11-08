@@ -1,0 +1,56 @@
+{% if settings.social_instagram %}
+<div class="section-show section-instagram container hidden" data-user="{{ settings.social_instagram }}">
+    <div class="flex justify-between">
+        <h2 class="title">Acompanhe a gente no instagram</h2>
+        <a href="{{ 'https://instagram.com/' ~ settings.social_instagram }}" target="_blank" rel="noreferrer noopener" class="flex align-center social-border">
+            <!-- <img class="lazyload" data-src="{{ asset('img/Instagram.svg') }}" alt="Instagram"> -->
+            <span class="name">
+                <span>Ir para o perfil</span>
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                        <defs><clipPath><path fill="#004498" stroke="#fff" stroke-width="0.8px" d="M0 0H12V12H0z" transform="translate(1597 2058)"/>
+                        </clipPath><style>.right-arr-3{fill:#004498}</style></defs><g transform="translate(-1597 -2058)"><g transform="translate(1597 2058.001)"><path d="M10.427 19.494a6 6 0 1 0-6-6.012 6.009 6.009 0 0 0 6 6.012zm.026-1.091a4.908 4.908 0 1 1 4.883-4.985 4.917 4.917 0 0 1-4.883 4.982z" class="right-arr-3" transform="translate(-4.429 -7.496)"/><path d="M10.764 13.476l-1.488 1.487c-.286.286-.574.571-.857.859a.545.545 0 0 0 .308.933.549.549 0 0 0 .483-.181q.993-.995 1.988-1.988c.226-.226.453-.451.677-.678a.543.543 0 0 0 0-.825Q10.539 11.745 9.2 10.41a.547.547 0 0 0-.955.393.608.608 0 0 0 .2.4q1.09 1.087 2.179 2.176a1.107 1.107 0 0 0 .14.097z" class="right-arr-3" transform="translate(-3.88 -7.496)"/></g></g>
+                    </svg>
+                </div>
+            </span>
+        </a>
+    </div>
+    
+    <div id="instagram">
+        <div class="instagram_gallery">
+            <span class="instagram-image"></span>
+            <span class="instagram-image"></span>
+            <span class="instagram-image"></span>
+            <span class="instagram-image"></span>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var verifyInstaFeed = setInterval(function () {
+            if (typeof $.instagramFeed !== 'undefined') {
+              clearInterval(verifyInstaFeed);
+
+              $.instagramFeed({
+                'username': $('.section-instagram').data('user'),
+                'container': "#instagram",
+                'display_profile': false,
+                'display_biography': false,
+                'display_gallery': true,
+                'callback': null,
+                'styling': true,
+                'items':4,
+                'items_per_row': 1,
+                'margin': 0,
+                'lazy_load': true,
+                'image_size': 320,
+                //'on_error': console.error
+              });
+            }
+        }, 500); 
+        setTimeout(function(){
+            $('.section-instagram').removeClass('hidden');
+        }, 1500);     
+    });
+</script>
+{% endif %}

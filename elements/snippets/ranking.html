@@ -1,0 +1,25 @@
+{# {% if total and ranking.rating > 0 %}
+<span class="total-result">{{ ranking.rating }}.0</span>
+{% endif %}
+<div class="ranking">
+    <span class="list-star" data-rating="{{ ranking.rating }}"></span>
+    <span class="total">{% if ranking.rating > 0 %}{{ ranking.count }} {{ ranking.count == 1 ? 'avaliação' : 'avaliações' }}{% else %}Avalie este produto{% endif %} </span>
+</div>
+ #}
+
+<div class="ranking">
+	<div class="list-star">
+	{% set arrayRating = [1,2,3,4,5] %}
+	{% for rating in arrayRating %}
+	    {% if nota.rating >= rating %}
+	        <div class="icon icon-star"></div>
+	    {% else %}
+	        <div class="icon icon-star-empty"></div>
+	    {% endif %}
+	{% endfor %}
+	</div>
+	<span class="avalie">{% if ranking.rating > 0 %}{{ ranking.count }} {{ ranking.count == 1 ? 'avaliação' : 'avaliações' }}{% else %}<span class="total">Avalie este produto</span>{% endif %} </span>
+	{% if total and nota.count > 0 %}
+	<span class="total">({{ nota.count }})</span>
+	{% endif %}
+</div>

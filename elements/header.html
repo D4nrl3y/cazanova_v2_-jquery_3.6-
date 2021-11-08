@@ -1,0 +1,406 @@
+<header class="header">
+    {# {{ pages.current != 'home' and pages.current != 'search' and pages.current != 'catalog' ? ' fixed-mobile fixed-true' }} #}
+    <div class="line-header">
+        <div class="container flex justify-between align-center">
+
+            <div class="menu-mobile icon icon-menu" data-js="open-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                    <defs><clipPath><path d="M0 0H28V28H0z" class="menu-mobile-ic-1" transform="translate(1506 43)"/></clipPath><style>.menu-mobile-ic-1{fill:#000000;stroke:#fff;stroke-width:.6px}</style></defs><g transform="translate(-1506 -43)"><g transform="translate(1506.055 43.055)"><g><g><path d="M13.945-.055a14 14 0 1 0 14 14 14 14 0 0 0-14-14zm0 25.667a11.667 11.667 0 1 1 11.667-11.667 11.667 11.667 0 0 1-11.667 11.667z" class="menu-mobile-ic-1"/><path d="M19.779 8.112H8.112a1.167 1.167 0 1 0 0 2.333h11.667a1.167 1.167 0 0 0 0-2.333z" class="menu-mobile-ic-1"/><path d="M19.779 12.779H8.112a1.167 1.167 0 1 0 0 2.333h11.667a1.167 1.167 0 0 0 0-2.333z" class="menu-mobile-ic-1"/><path d="M19.779 17.445H8.112a1.167 1.167 0 0 0 0 2.333h11.667a1.167 1.167 0 0 0 0-2.333z" class="menu-mobile-ic-1"/></g></g></g></g>
+                </svg>
+            </div>
+
+            <div class="engloba-logo">
+                <div class="menu">
+                    <i class="icon icon-menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><style>.menu-top-ic-1 {fill: #000000;stroke: #fff;stroke-width: 0.4px;}</style><clipPath><rect class="menu-top-ic-1" width="28" height="28" transform="translate(1506 43)"/></clipPath></defs><g data-name="ic:top 0" class="menu-top-ic-2" transform="translate(-1506 -43)"><g data-name="660015" transform="translate(1506.055 43.055)"><g data-name="Grupo 1377"><g data-name="Grupo 1376"><path data-name="Caminho 56194" class="menu-top-ic-1" d="M13.945-.055a14,14,0,1,0,14,14A14,14,0,0,0,13.945-.055Zm0,25.667A11.667,11.667,0,1,1,25.612,13.945,11.667,11.667,0,0,1,13.945,25.612Z"/><path data-name="Caminho 56195" class="menu-top-ic-1" d="M19.779,8.112H8.112a1.167,1.167,0,1,0,0,2.333H19.779a1.167,1.167,0,0,0,0-2.333Z"/><path data-name="Caminho 56196" class="menu-top-ic-1" d="M19.779,12.779H8.112a1.167,1.167,0,1,0,0,2.333H19.779a1.167,1.167,0,0,0,0-2.333Z"/><path data-name="Caminho 56197" class="menu-top-ic-1" d="M19.779,17.445H8.112a1.167,1.167,0,0,0,0,2.333H19.779a1.167,1.167,0,0,0,0-2.333Z"/></g></g></g></g>
+                        </svg>
+                    </i>
+                    <span>Menu</span>
+                </div>
+                <a href="{{ store.url }}" class="logo">
+                    <img src="{{ asset('img/cazanova-brand.svg') }}" width="176" height="63" alt="{{ store.name }}">
+                </a>
+            </div>
+
+            <div class="search-icon icon icon-search" tabindex="0" role="button"></div>
+            {% element 'snippets/search' {'placeholder': 'O que voc� procura hoje?'} %}
+
+            <div class="right flex align-center">
+
+                <div class="item-right account" tabindex="0" role="button">
+                    <span class="icon icon-account">                        
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28"  viewBox="0 0 28 28">
+                            <defs><style>.user-ic-1 {fill: #000000;}</style><clipPath><rect class="user-ic-1" width="28" height="28" transform="translate(1300 40)"/></clipPath></defs><g data-name="ic:top 4" class="user-ic-2" transform="translate(-1300 -40)"><g data-name="482636" transform="translate(1300.269 40.268)"><path data-name="Caminho 56163" class="user-ic-1" d="M13.732-.268a14,14,0,1,0,14,14A14.017,14.017,0,0,0,13.732-.268Zm0,19.992a20.524,20.524,0,0,1,9.022,2.371,12.261,12.261,0,0,1-18.044,0A20.524,20.524,0,0,1,13.732,19.723Zm0-18.313A12.336,12.336,0,0,1,26.053,13.732a12.188,12.188,0,0,1-2.226,7.032c-.07-.043-.134-.075-.2-.113h0a22.261,22.261,0,0,0-9.9-2.612,22.3,22.3,0,0,0-9.9,2.612c-.064.032-.129.07-.2.113a12.3,12.3,0,0,1,10.1-19.353Z"/><path data-name="Caminho 56164" class="user-ic-1" d="M13.732,3.739a6.85,6.85,0,1,0,6.85,6.85A6.859,6.859,0,0,0,13.732,3.739Zm0,12.015A5.166,5.166,0,1,1,18.9,10.589,5.171,5.171,0,0,1,13.732,15.754Z"/></g></g>
+                        </svg>
+                    </span>
+                    <span class="area-text">
+                        Entrar ou criar conta
+                    </span>
+                </div>
+
+                {% element 'snippets/cart' %}
+
+                <div class="item-right ajuda" tabindex="0" role="button">
+                    <span class="icon icon-Ajuda">                       
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                          <defs><style>.help-ic-1 {fill: #000000;}</style><clipPath><rect class="help-ic-1" width="28" height="28" transform="translate(1506 43)"/>
+                            </clipPath></defs><g data-name="ic:top 2" class="help-ic-2" transform="translate(-1506 -43)"><g transform="translate(1504.307 41.307)"><path data-name="Caminho 56172" class="help-ic-1" d="M15.628,29.693A14,14,0,1,1,29.693,15.628,14.174,14.174,0,0,1,15.628,29.693Zm0-26.047A12.112,12.112,0,1,0,27.74,15.758,12.089,12.089,0,0,0,15.628,3.647Z"/><path data-name="Caminho 56173" class="help-ic-1" d="M15.5,17.972a.979.979,0,0,1-.912-.651.932.932,0,0,1,.651-1.172s3.256-1.172,3.256-3a2.816,2.816,0,0,0-1.953-2.735,2.614,2.614,0,0,0-2.214.13,2.644,2.644,0,0,0-1.433,1.693,1.03,1.03,0,1,1-1.953-.651,4.652,4.652,0,0,1,2.474-2.735,5.373,5.373,0,0,1,3.777-.26,4.9,4.9,0,0,1,3.256,4.558c0,3.256-4.428,4.819-4.558,4.819C15.758,17.842,15.628,17.972,15.5,17.972Z"/><path data-name="Caminho 56174" class="help-ic-1" d="M15.628,23.181a1.027,1.027,0,0,1-1.042-1.042A.929.929,0,0,1,15.5,21.1h0A1.027,1.027,0,0,1,16.54,22.14.929.929,0,0,1,15.628,23.181Z"/></g></g>
+                        </svg>
+                    </span>
+                    <span class="area-text">Precisa de ajuda?</span>
+
+                    <div class="shadow-help"></div>
+                    <div class="help-abs-content" data-js="modal-contact">
+
+                        <div class="header-modal">
+                            <div class="title-modal flex align-center">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                                        <defs><style>.user-ic-1 {fill: #000000;}</style><clipPath><rect class="user-ic-1" width="28" height="28" transform="translate(1300 40)"/></clipPath></defs><g data-name="ic:top 4" class="user-ic-2" transform="translate(-1300 -40)"><g data-name="482636" transform="translate(1300.269 40.268)"><path data-name="Caminho 56163" class="user-ic-1" d="M13.732-.268a14,14,0,1,0,14,14A14.017,14.017,0,0,0,13.732-.268Zm0,19.992a20.524,20.524,0,0,1,9.022,2.371,12.261,12.261,0,0,1-18.044,0A20.524,20.524,0,0,1,13.732,19.723Zm0-18.313A12.336,12.336,0,0,1,26.053,13.732a12.188,12.188,0,0,1-2.226,7.032c-.07-.043-.134-.075-.2-.113h0a22.261,22.261,0,0,0-9.9-2.612,22.3,22.3,0,0,0-9.9,2.612c-.064.032-.129.07-.2.113a12.3,12.3,0,0,1,10.1-19.353Z"/><path data-name="Caminho 56164" class="user-ic-1" d="M13.732,3.739a6.85,6.85,0,1,0,6.85,6.85A6.859,6.859,0,0,0,13.732,3.739Zm0,12.015A5.166,5.166,0,1,1,18.9,10.589,5.171,5.171,0,0,1,13.732,15.754Z"/></g></g>
+                                    </svg>
+                                </div>
+                                <span class="text">Precisa de ajuda?</span>
+                                <div class="area-close">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                        <defs><clipPath><path d="M0 0H12V12H0z" class="close-ic-1" transform="translate(1781.737 -28.886)"/></clipPath><style>.close-ic-1{fill:#474e5f}</style></defs><g transform="translate(-1781.737 28.886)"><path d="M14.16 13.241l4.594-4.594a.65.65 0 0 0-.919-.919l-4.594 4.594-4.593-4.51a.65.65 0 0 0-.919.919l4.594 4.594-4.594 4.593a.655.655 0 0 0 0 .919.606.606 0 0 0 .835 0l4.594-4.594 4.594 4.594a.606.606 0 0 0 .835 0 .655.655 0 0 0 0-.919z" class="close-ic-1" transform="translate(1774.764 -36.234)"/></g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inner-content">
+
+                            <div class="simple-text">
+                                <span class="blue">Cazanova Material de Constru��o e Distribui��o LTDA</span> {% if settings.anddress_store != '' %}
+                                <span class="gray">
+                                        {{ settings.anddress_store }}                                    
+                                    </span>
+                                </span>
+                                {% endif %}
+                            </div>
+
+                            {% set tel = settings.phone %} {% if tel %} {% set tellink = tel|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+                            <a class="phone-help flex align-center" href="tel:{{ tellink }}">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                            <defs><clipPath><path fill="#fe800a" d="M0 0H18V18H0z" transform="translate(476.043 6463.043)"/></clipPath></defs><g transform="translate(-476.043 -6463.043)"><path fill="none" stroke="#fe800a" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2px" d="M11.9 3.925A4.018 4.018 0 0 1 15.071 7.1M11.9.711a7.232 7.232 0 0 1 6.388 6.38m-.8 6.412v2.411a1.607 1.607 0 0 1-1.752 1.607A15.9 15.9 0 0 1 8.8 15.054a15.669 15.669 0 0 1-4.821-4.821 15.9 15.9 0 0 1-2.471-6.967 1.607 1.607 0 0 1 1.6-1.752h2.409A1.607 1.607 0 0 1 7.124 2.9a10.317 10.317 0 0 0 .562 2.258 1.607 1.607 0 0 1-.362 1.7L6.3 7.87a12.857 12.857 0 0 0 4.821 4.821l1.02-1.02a1.607 1.607 0 0 1 1.7-.362 10.317 10.317 0 0 0 2.258.562 1.607 1.607 0 0 1 1.383 1.629z" transform="translate(475.118 6462.955)"/></g>
+                                        </svg>
+                                </div>
+                                <span>{{ settings.phone }}</span>
+                            </a>
+                            {% endif %} {% if settings.whatsapp_number != '' %} {% set whats = settings.whatsapp_number %} {% set link = whats|replace({'(': '', ')': '', ' ':'', '-': ''}) %}
+                            <a class="phone-help flex align-center" href="https://api.whatsapp.com/send?l=pt&phone=55{{link}}" target="_blank" rel="noreferrer noopener">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                                            <defs><clipPath><path d="M0 0H18V18H0z" class="whats-ic-1" transform="translate(475.607 6508.607)"/>
+                                            </clipPath><style>.whats-ic-1{fill:#000000}</style></defs><g transform="translate(-475.607 -6508.607)"><g transform="translate(476.008 6509)"><path d="M14.657 2.5a8.6 8.6 0 0 0-12.125 0A8.445 8.445 0 0 0 0 8.528a8.489 8.489 0 0 0 1.047 4.029L.024 17.215l4.708-1.071a8.617 8.617 0 0 0 3.864.918 8.576 8.576 0 0 0 6.067-2.5A8.44 8.44 0 0 0 14.657 2.5zM8.6 15.719a7.262 7.262 0 0 1-3.452-.875l-.223-.121-3.13.712.68-3.09-.131-.226a7.182 7.182 0 0 1-1-3.588 7.253 7.253 0 0 1 12.365-5.079 7.142 7.142 0 0 1 2.146 5.082A7.231 7.231 0 0 1 8.6 15.719zm0 0" class="whats-ic-1"/><path d="M5.929 4.433h-.376a.724.724 0 0 0-.524.245 2.195 2.195 0 0 0-.689 1.635 3.807 3.807 0 0 0 .8 2.027A8.063 8.063 0 0 0 8.5 11.3c1.662.653 2 .523 2.36.49a1.986 1.986 0 0 0 1.328-.932 1.634 1.634 0 0 0 .115-.932c-.049-.082-.18-.131-.377-.229s-1.161-.58-1.341-.646-.311-.1-.443.1-.517.649-.632.78-.229.147-.426.049A5.438 5.438 0 0 1 7.511 9a6.027 6.027 0 0 1-1.105-1.376c-.115-.2-.012-.3.086-.4S6.7 7.017 6.8 6.9a1.326 1.326 0 0 0 .192-.327.36.36 0 0 0-.016-.343c-.049-.1-.427-1.068-.6-1.455-.147-.327-.3-.338-.443-.343zm0 0" class="whats-ic-1" transform="translate(.329 .337)"/></g></g>
+                                        </svg>
+                                </div>
+                                <span>{{ settings.whatsapp_number }}</span>
+                            </a>
+                            {% endif %} {% if settings.hour_store != '' %}
+                            <span class="time-open-text">
+                                <span class="gray">
+                                    {{ settings.hour_store }}                                    
+                                </span>
+                            </span>
+                            {% endif %}
+
+                            <a href="{{ links.contact }}" class="button-fale-conosco">fale conosco</a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-modal">
+        <div class="relative">
+            <div class="option-header">
+                <div class="text flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                          <defs><style>.cart-ic-1 {fill: #000000;}</style><clipPath ><rect class="cart-ic-1" width="28" height="28" transform="translate(1415 43)"/>
+                          </clipPath></defs><g data-name="ic:top 3" class="cart-ic-2" transform="translate(-1415 -43)"><g transform="translate(1414.643 43.238)"><path data-name="Caminho 56167" class="cart-ic-1" d="M23.472,27.166a2.517,2.517,0,0,1-2.5-2.5,2.5,2.5,0,1,1,5,0A2.517,2.517,0,0,1,23.472,27.166Z"/><path data-name="Caminho 56168" class="cart-ic-1" d="M10.962,27.047a2.5,2.5,0,0,1,0-5,2.5,2.5,0,0,1,0,5Z"/><path data-name="Caminho 56169" class="cart-ic-1" d="M11.438,20.017A3.3,3.3,0,0,1,8.221,17.4L6.315,7.387V7.268L5.243,2.145H1.191a.921.921,0,0,1-.834-.953A.814.814,0,0,1,1.191.357H5.957a.8.8,0,0,1,.834.715L7.864,6.315H27.4a1.03,1.03,0,0,1,.715.357.875.875,0,0,1,.238.715L26.451,17.4a3.3,3.3,0,0,1-3.217,2.621h-11.8ZM8.221,8.1l1.787,8.936a1.455,1.455,0,0,0,1.549,1.191H23.115a1.645,1.645,0,0,0,1.549-1.191L26.332,8.1Z"/></g></g>
+                        </svg>
+                    </div>
+                    <div class="title">meu carrinho</div>
+                    <span class="qnt-cart"><span data-cart="amount">0</span></span>
+                </div>
+                <div class="close-button icon-close" tabindex="0" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                        <defs><clipPath><path d="M0 0H12V12H0z" class="close-ic-1" transform="translate(1781.737 -28.886)"/></clipPath><style>.close-ic-1{fill:#474e5f}</style></defs><g transform="translate(-1781.737 28.886)"><path d="M14.16 13.241l4.594-4.594a.65.65 0 0 0-.919-.919l-4.594 4.594-4.593-4.51a.65.65 0 0 0-.919.919l4.594 4.594-4.594 4.593a.655.655 0 0 0 0 .919.606.606 0 0 0 .835 0l4.594-4.594 4.594 4.594a.606.606 0 0 0 .835 0 .655.655 0 0 0 0-.919z" class="close-ic-1" transform="translate(1774.764 -36.234)"/></g>
+                    </svg>
+                </div>
+            </div>
+            <div class="list"></div>
+            <div class="footer-cart">
+                {% if settings.shipping %}
+                <div class="shipping" data-value="{{ settings.shipping }}">
+                    <div class="line flex align-center"><i class="icon icon-shipping"></i><span data-js="shipping-decrement"></span></div>
+                    <div class="bar-progress" data-value="0%">
+                        <div class="bar" style="width: 0%"></div>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="bg-cart">
+                    <div class="line-price">Subtotal do carrinho: <span class="value" data-js="price">R$ 0,00</span></div>
+                    <a class="button large green" href="{{ links.cart }}">ir para carrinho</a>
+                    <span class="continue-buying">CONTINUAR COMPRANDO</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% element 'snippets/nav_mobile' %}
+
+    <div class="nav">
+        <div class="container">
+            <div class="list">
+                <div class="nav-all">
+                    <span class="text">
+                        <i class="icon icon-menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                                <defs><style>.menu-top-ic-1 {fill: #000000;stroke: #fff;stroke-width: 0.4px;}</style><clipPath><rect class="menu-top-ic-1" width="28" height="28" transform="translate(1506 43)"/></clipPath></defs><g data-name="ic:top 0" class="menu-top-ic-2" transform="translate(-1506 -43)"><g data-name="660015" transform="translate(1506.055 43.055)"><g data-name="Grupo 1377"><g data-name="Grupo 1376"><path data-name="Caminho 56194" class="menu-top-ic-1" d="M13.945-.055a14,14,0,1,0,14,14A14,14,0,0,0,13.945-.055Zm0,25.667A11.667,11.667,0,1,1,25.612,13.945,11.667,11.667,0,0,1,13.945,25.612Z"/><path data-name="Caminho 56195" class="menu-top-ic-1" d="M19.779,8.112H8.112a1.167,1.167,0,1,0,0,2.333H19.779a1.167,1.167,0,0,0,0-2.333Z"/><path data-name="Caminho 56196" class="menu-top-ic-1" d="M19.779,12.779H8.112a1.167,1.167,0,1,0,0,2.333H19.779a1.167,1.167,0,0,0,0-2.333Z"/><path data-name="Caminho 56197" class="menu-top-ic-1" d="M19.779,17.445H8.112a1.167,1.167,0,0,0,0,2.333H19.779a1.167,1.167,0,0,0,0-2.333Z"/></g></g></g></g>
+                            </svg>
+                        </i>
+                        <span>categorias</span>
+                    </span>
+                    <div class="full-nav">
+                        <div class="container">
+                            {% element 'snippets/nav' %}
+                        </div>
+                    </div>
+                </div>
+
+                {# {% set list = [] %} {% for i in 1..5 %} {% set title = attribute(settings, 'nav_'~i~'_text') %} {% set link = attribute(settings, 'nav_'~i~'_link') %} {% if title %} {% set list = list|merge([{"title": title, "link": link }]) %} {% endif %} {% endfor
+                %} {% for item in list %}
+                <a class="text" href="{{ item.link }}">{{ item.title }}</a> {% endfor %} #} {% for category in categories %} {% set loopIndex = loop.index %} {% if loopIndex
+                < 9 %} <div class="item">
+                    <a href="{{ category.link }}" class="text" data-id="{{ category.id }}">
+                                {% if category.images[0] %}
+                                    <i class="icon"> 
+                                        <img src="{{ category.images[0] }}" alt="{{ category.name }}" />
+                                    </i>
+                                {% endif %}
+                                <span>{{ category.name }}</span>                            
+                            </a> {% if category.children %}
+                    <div class="full-nav">
+                        <div class="container">
+                            <ul class="nav-category">
+                                {% for level2 in category.children %} {% set loopIndex = loop.index %}
+                                <li>
+                                    <a href="{{ level2.link }}" {{ level2.children ? 'class="has-sub"' }} data-id="{{ level2.id }}">
+                                        <span>{{ level2.name }}</span> {% if level2.children %}
+                                        <i class="icon icon-right"></i> {% endif %}
+                                    </a>
+                                    {% if level2.children %}
+                                    <div class="sub flex justify-between" data-text="{{ level2.name }}">
+                                        <div class="scrollbar-inner">
+                                            <ul class="subs">
+                                                {% for level3 in level2.children %}
+                                                <li>
+                                                    <a href="{{ level3.link }}">{{ level3.name }}</a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    </div>
+                    {% endif %}
+            </div>
+            {% endif %} {% endfor %} {#
+            <a href="/pisos-e-revestimentos" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><style>.cls-1 {fill: #fe800a;}</style><clipPath><rect class="cls-1" width="28" height="28" transform="translate(500 140)"/>
+                            </clipPath></defs><g data-name="Grupo de m�scara 318" class="cls-2" transform="translate(-500 -140)"><g id="_386668" data-name="386668" transform="translate(500 140)"><g data-name="Grupo 1379"><path data-name="Caminho 56199" class="cls-1" d="M27.087,0H.913A.916.916,0,0,0,0,.913V27.087A.916.916,0,0,0,.913,28H27.087A.915.915,0,0,0,28,27.087V.913A.915.915,0,0,0,27.087,0Zm-2.2,1.826-7.23,7.23L15.291,6.7l4.87-4.87h4.722ZM21.3,7.987l2.361,2.361-6.013,6.013L15.291,14ZM17.578,1.826,14,5.4,10.422,1.826h7.157Zm-1.217,8.522L14,12.709,7.987,6.7l2.361-2.361ZM12.709,14,6.7,20.013,4.335,17.652l6.013-6.013ZM7.839,1.826,9.057,3.043,6.7,5.4,3.117,1.826ZM1.826,3.117l7.23,7.23L6.7,12.709l-4.87-4.87V3.117Zm0,7.3L5.4,14,1.826,17.578V10.422Zm0,9.739,1.217-1.217L5.4,21.3,1.826,24.883V20.161Zm1.291,6.013,7.23-7.23L12.709,21.3l-4.87,4.87H3.117Zm7.3,0L14,22.6l3.578,3.578H10.422Zm1.217-8.522L14,15.291,20.013,21.3l-2.361,2.361Zm8.522,8.522-1.217-1.217L21.3,22.6l3.578,3.578H20.161Zm6.013-1.291-7.23-7.23L21.3,15.291l4.87,4.87v4.722Zm0-7.3L22.6,14l3.578-3.578v7.157Zm0-9.739L24.956,9.057,22.6,6.7l3.578-3.578V7.839Z"/></g>
+                            </g></g>
+                        </svg>
+                    </i>
+                <span>Pisos e revestimentos</span>
+            </a>
+
+
+            <a href="/argamassas-e-rejuntes" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                          <defs><style>.cls-1 {fill: #fe800a;}</style><clipPath><rect class="cls-1" width="28" height="28" transform="translate(448 140)"/>
+                            </clipPath></defs><g data-name="Grupo de m�scara 319" class="cls-2" transform="translate(-448 -140)"><g data-name="2825755" transform="translate(448 140)"><path data-name="Caminho 56200" class="cls-1" d="M27.125,13.18H23.57V9.607a.82.82,0,0,0-.82-.82H19.2V5.214a.82.82,0,0,0-.82-.82H14.82V.82A.82.82,0,0,0,14,0H.875a.82.82,0,0,0-.82.82V27.18a.82.82,0,0,0,.82.82h26.25a.82.82,0,0,0,.82-.82V14A.82.82,0,0,0,27.125,13.18Zm-12.3,8.786V19.214H21.93v2.753Zm-8.75,0V19.214H13.18v2.753Zm-4.375,0V19.214H4.43v2.753ZM8.8,6.034V8.786H1.7V6.034Zm8.75,11.539H10.445V14.82h7.109Zm-15.859,0V14.82H8.8v2.753Zm0-7.146H4.43V13.18H1.7ZM13.18,13.18H6.07V10.427H13.18ZM23.57,19.214H26.3v2.753H23.57ZM26.3,17.573H19.2V14.82H26.3ZM21.93,13.18H14.82V10.427H21.93ZM17.555,8.786H10.445V6.034h7.109ZM13.18,4.393H6.07V1.641H13.18ZM1.7,1.641H4.43V4.393H1.7Zm0,21.966H8.8v2.753H1.7Zm8.75,0h7.109v2.753H10.445ZM26.3,26.359H19.2V23.607H26.3Z"/></g></g>
+                        </svg>
+                    </i>
+                <span>Argamassas e rejuntes</span>
+            </a>
+
+
+            <a href="/banheiros" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><style>.cls-1 {fill: #fe800a;}</style><clipPath><rect id="bg" class="cls-1" width="28" height="28"/>
+                            </clipPath></defs><g data-name="Grupo de m�scara 317" class="cls-2"><g data-name="751935" transform="translate(0.002)"><g id="Grupo_1378" data-name="Grupo 1378">
+                            <path data-name="Caminho 56198" class="cls-1" d="M2.463,0h8.2a2.461,2.461,0,0,1,.82,4.781v6.9a2.449,2.449,0,0,1,.82-.141H25.541a2.462,2.462,0,0,1,.793,4.791A9.03,9.03,0,0,1,19.8,24.324V27.18a.82.82,0,0,1-.82.82H9.026a.82.82,0,0,1-.82-.82V24.8a2.775,2.775,0,0,0-1.9-2.636,4.414,4.414,0,0,1-3.022-4.193V16.32A2.465,2.465,0,0,1,1.643,14V4.781A2.461,2.461,0,0,1,2.463,0ZM26.368,14a.825.825,0,0,0-.827-.82H12.307a.82.82,0,1,0,0,1.641H25.541A.825.825,0,0,0,26.368,14ZM6.824,20.6A4.414,4.414,0,0,1,9.846,24.8v1.562h8.313V23.68a.82.82,0,0,1,.657-.8,7.417,7.417,0,0,0,5.86-6.426H4.924v1.518h0A2.775,2.775,0,0,0,6.824,20.6ZM3.283,14a.821.821,0,0,0,.82.82H9.026a.821.821,0,0,0,.82-.82V4.922H3.283ZM2.463,3.281h8.2a.82.82,0,0,0,0-1.641h-8.2a.82.82,0,0,0,0,1.641Z" transform="translate(-0.002)"/></g></g></g>
+                        </svg>
+                    </i>
+                <span>Banheiros</span>
+            </a>
+
+
+            <a href="/tintas-e-vernizes" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><clipPath><path id="bg" d="M0 0H28V28H0z" class="cls-1" transform="translate(304 140)"/>
+                            </clipPath><style>.cls-1{fill:#fe800a}</style></defs><g transform="translate(-304 -140)">
+                            <g transform="translate(304 140)"><g><path id="Caminho_56201" d="M23 8.335a9.024 9.024 0 0 0-18 0 2.461 2.461 0 0 0-.026 4.649v12.555A2.464 2.464 0 0 0 7.438 28h13.125a2.464 2.464 0 0 0 2.461-2.461V12.984A2.461 2.461 0 0 0 23 8.335zm-9-6.694A7.394 7.394 0 0 1 21.338 8.2H6.662A7.394 7.394 0 0 1 14 1.641zm-9.023 9.023a.821.821 0 0 1 .82-.82h5.742v1.641H5.8a.821.821 0 0 1-.823-.821zm15.586 15.7H7.438a.821.821 0 0 1-.82-.82V13.125h5.062a2.461 2.461 0 0 0 3.14 1.5v4.3a2.461 2.461 0 0 0 4.922 0v-1.7a.821.821 0 0 1 .82-.82.821.821 0 0 1 .818.82v8.313a.821.821 0 0 1-.817.821zm1.637-14.88a.82.82 0 0 0-.82.82v2.6a2.456 2.456 0 0 0-.816-.14 2.464 2.464 0 0 0-2.464 2.463v1.7a.82.82 0 0 1-1.641 0V12.3a.82.82 0 0 0-1.641 0 .82.82 0 0 1-1.641 0V9.844H22.2a.82.82 0 1 1 0 1.641z" class="cls-1"/></g></g></g>
+                        </svg>
+                    </i>
+                <span>Tintas e vernizes</span>
+            </a>
+
+
+            <a href="/materiais-eletricos" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><clipPath><path d="M0 0H28V28H0z" class="cls-1" transform="translate(287 140)"/></clipPath><style>.cls-1{fill:#fe800a}</style></defs><g transform="translate(-287 -140)"><g transform="translate(287 140)"><path d="M14 28h9.844a2.464 2.464 0 0 0 2.456-2.461V2.461A2.464 2.464 0 0 0 23.844 0H14a2.464 2.464 0 0 0-2.461 2.461v17.227h-.82a2.464 2.464 0 0 0-2.461 2.461v3.391a.82.82 0 0 1-1.641 0V9.844h.82a.82.82 0 0 0 .778-.561l1.642-4.922a.821.821 0 0 0-.778-1.08h-.82V.82a.82.82 0 0 0-1.641 0v2.461H4.977V.82a.82.82 0 0 0-1.641 0v2.461h-.82a.821.821 0 0 0-.778 1.08l1.64 4.922a.82.82 0 0 0 .778.561h.82v15.7a2.461 2.461 0 0 0 4.922 0v-3.396a.821.821 0 0 1 .82-.82h.82v4.211A2.464 2.464 0 0 0 14 28zM3.654 4.922H7.94L6.847 8.2h-2.1zm9.526-2.461a.821.821 0 0 1 .82-.82h9.844a.821.821 0 0 1 .82.82v23.078a.821.821 0 0 1-.82.82H14a.821.821 0 0 1-.82-.82z" class="cls-1"/>
+                            <path d="M15.641 22.969H22.2a.82.82 0 0 0 .82-.82v-3.282a.82.82 0 0 0-.82-.82h-6.559a.82.82 0 0 0-.82.82v3.281a.82.82 0 0 0 .82.821zm5.742-1.641h-1.641v-1.64h1.641zm-4.922-1.641H18.1v1.641h-1.639z" class="cls-1"/><path d="M15.641 16.406H22.2a.82.82 0 0 0 .82-.82V12.3a.82.82 0 0 0-.82-.82h-6.559a.82.82 0 0 0-.82.82v3.281a.82.82 0 0 0 .82.825zm5.742-1.641h-1.641v-1.64h1.641zm-4.922-1.641H18.1v1.641h-1.639z" class="cls-1"/>
+                            <path d="M15.641 9.844H22.2a.82.82 0 0 0 .82-.82V5.742a.82.82 0 0 0-.82-.82h-6.559a.82.82 0 0 0-.82.82v3.281a.82.82 0 0 0 .82.821zM21.383 8.2h-1.641V6.563h1.641zm-4.922-1.637H18.1V8.2h-1.639z" class="cls-1"/></g></g>
+                        </svg>
+                    </i>
+                <span>Materiais el�tricos</span>
+            </a>
+
+            <a href="/lustres-e-luminarias" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                            <defs><style>.cls-1 {fill: #fe800a;}</style><clipPath><rect class="cls-1" width="28" height="28" transform="translate(247 140)"/>
+                            </clipPath></defs><g data-name="Grupo de m�scara 322" class="cls-2" transform="translate(-247 -140)"><g data-name="1172669" transform="translate(248.941 140)">
+                            <path data-name="Caminho 56206" class="cls-1" d="M24.043,18.577a1.631,1.631,0,0,0-.66-1.84l-7.326-4.884L14.494,5.6a.82.82,0,0,0-.8-.621h-.82V1.641h2.461a.82.82,0,0,0,0-1.641H8.776a.82.82,0,0,0,0,1.641h2.461V4.977h-.82a.82.82,0,0,0-.8.621L8.057,11.853.732,16.736a1.641,1.641,0,0,0,.91,3.006h6.4a4.1,4.1,0,0,0,8.038,0h6.4a1.631,1.631,0,0,0,1.57-1.165ZM11.057,6.617h2l1.23,4.922H9.827ZM9.025,13.18h6.066L22.473,18.1H1.642Zm3.033,8.2a2.465,2.465,0,0,1-2.32-1.641h4.64a2.466,2.466,0,0,1-2.32,1.641Zm0,0"/><path id="Caminho_56207" data-name="Caminho 56207" class="cls-1" d="M11.237,25.484v1.7a.82.82,0,1,0,1.641,0v-1.7a.82.82,0,1,0-1.641,0Zm0,0"/><path data-name="Caminho 56208" class="cls-1" d="M15.223,23.728a.82.82,0,0,0,0,1.16L16.4,26.062a.82.82,0,1,0,1.16-1.16l-1.174-1.174a.82.82,0,0,0-1.16,0Zm0,0"/><path data-name="Caminho 56209" class="cls-1" d="M7.732,23.728,6.558,24.9a.82.82,0,0,0,1.16,1.16l1.174-1.174a.82.82,0,1,0-1.16-1.16Zm0,0"/></g></g>
+                        </svg>
+                    </i>
+                <span>Lustres e lumin�rias</span>
+            </a>
+
+
+            <a href="/eletronicos" class="text">
+                <i class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                          <defs><style>.cls-1 {fill: #fe800a;}</style><clipPath><rect class="cls-1" width="24" height="24" transform="translate(138 142)"/>
+                            </clipPath></defs><g data-name="Grupo de m�scara 323" class="cls-2" transform="translate(-138 -142)"><g data-name="807474" transform="translate(138 142)"><g data-name="Grupo 1382"><g data-name="Grupo 1381"><path data-name="Caminho 56210" class="cls-1" d="M19.031,22.594h-2.3l-.734-2.233a10.547,10.547,0,1,0-7.988,0l-.734,2.233h-2.3a.7.7,0,0,0,0,1.406H19.031a.7.7,0,0,0,0-1.406Zm-16.172-12A9.141,9.141,0,1,1,12,19.734,9.175,9.175,0,0,1,2.859,10.594Zm5.893,12,.588-1.79a10.663,10.663,0,0,0,5.318,0l.588,1.79Z"/></g></g><g id="Grupo_1384" data-name="Grupo 1384"><g data-name="Grupo 1383"><path data-name="Caminho 56211" class="cls-1" d="M19.17,11.071a4.221,4.221,0,0,0-4.234-2.407,3.537,3.537,0,0,0-1.506-1.281l.014-.021a7.425,7.425,0,0,1,1.063-1.147c.593-.553,1.153-1.075,1.1-1.81A1.892,1.892,0,0,0,14.7,3.1,4.219,4.219,0,0,0,8.86,9.015a3.491,3.491,0,0,0-.376,1.579,3.537,3.537,0,0,0,.019.367l-.022,0a7.424,7.424,0,0,1-1.524-.347,2.43,2.43,0,0,0-2.118-.049A1.893,1.893,0,0,0,4.159,12,4.219,4.219,0,0,0,12.2,14.1a3.5,3.5,0,0,0,1.861-.667l.012.025a7.425,7.425,0,0,1,.461,1.494c.182.79.355,1.536,1.017,1.858C17.2,17.614,20.8,14.536,19.17,11.071ZM9.983,4.951a2.811,2.811,0,0,1,3.915-.7,1.294,1.294,0,0,1,.294.257,4.26,4.26,0,0,1-.644.68,8.669,8.669,0,0,0-1.258,1.371,5.894,5.894,0,0,0-.321.52A3.5,3.5,0,0,0,9.8,7.857,2.831,2.831,0,0,1,9.983,4.951ZM8.124,15.162A2.816,2.816,0,0,1,5.56,12.121a1.292,1.292,0,0,1,.076-.383,4.267,4.267,0,0,1,.911.218,8.666,8.666,0,0,0,1.816.4,5.881,5.881,0,0,0,.611.018,3.535,3.535,0,0,0,1.76,1.494A2.83,2.83,0,0,1,8.124,15.162ZM12,12.7a2.109,2.109,0,1,1,2.109-2.109A2.112,2.112,0,0,1,12,12.7Zm4.545,2.706a1.292,1.292,0,0,1-.37.126,4.257,4.257,0,0,1-.266-.9,8.666,8.666,0,0,0-.559-1.775,5.885,5.885,0,0,0-.291-.541,3.492,3.492,0,0,0,.456-1.728,3.531,3.531,0,0,0-.042-.54,2.812,2.812,0,0,1,1.071,5.355Z"/></g></g></g></g>
+                        </svg>
+                    </i>
+                <span>Eletr�nicos</span>
+            </a> #} {#
+            <a class="text" href="/ofertas"><span class="featured">Ofertas</span></a> #}
+
+        </div>
+    </div>
+    </div>
+    <div class="shadow-top"></div>
+</header>
+<div class="shadow-header"></div>
+{#{% if pages.current == 'home' or pages.current == 'search' or pages.current == 'catalog' %}#}
+<div class="search-mobile">
+    <div class="fixed-search">
+        {% element 'snippets/search' {'placeholder': 'O que voc� precisa?'} %}
+    </div>
+</div>
+{#{% endif %}#} {#
+<div class="modal-sub" data-js="modal-contact">
+    <div class="over">
+        <div class="shadow"></div>
+        <div class="over-center">
+            <div class="content-sub">
+                <div class="header-modal">
+                    <div class="title-modal">Ol�, como podemos te ajudar?</div>
+                    <div class="area-close">
+                        <i class="icon icon-logo"></i>
+                        <i class="icon icon-close" data-js="close" tabindex="0" role="button"></i>
+                    </div>
+                </div>
+                <div class="contact-content">
+                    {% element 'snippets/info-contact' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+#}
+
+<div class="modal-sub" data-js="modal-account">
+    <div class="over">
+        <div class="shadow"></div>
+        <div class="over-center">
+            <div class="content-sub">
+                <div class="header-modal">
+                    <div class="title-modal flex align-center">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+                                <defs><style>.user-ic-1 {fill: #000000;}</style><clipPath><rect class="user-ic-1" width="28" height="28" transform="translate(1300 40)"/></clipPath></defs><g data-name="ic:top 4" class="user-ic-2" transform="translate(-1300 -40)"><g data-name="482636" transform="translate(1300.269 40.268)"><path data-name="Caminho 56163" class="user-ic-1" d="M13.732-.268a14,14,0,1,0,14,14A14.017,14.017,0,0,0,13.732-.268Zm0,19.992a20.524,20.524,0,0,1,9.022,2.371,12.261,12.261,0,0,1-18.044,0A20.524,20.524,0,0,1,13.732,19.723Zm0-18.313A12.336,12.336,0,0,1,26.053,13.732a12.188,12.188,0,0,1-2.226,7.032c-.07-.043-.134-.075-.2-.113h0a22.261,22.261,0,0,0-9.9-2.612,22.3,22.3,0,0,0-9.9,2.612c-.064.032-.129.07-.2.113a12.3,12.3,0,0,1,10.1-19.353Z"/><path data-name="Caminho 56164" class="user-ic-1" d="M13.732,3.739a6.85,6.85,0,1,0,6.85,6.85A6.859,6.859,0,0,0,13.732,3.739Zm0,12.015A5.166,5.166,0,1,1,18.9,10.589,5.171,5.171,0,0,1,13.732,15.754Z"/></g></g>
+                            </svg>
+                        </div>
+                        <span class="text">acesso r�pido</span>
+                        <div class="area-close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                <defs><clipPath><path d="M0 0H12V12H0z" class="close-ic-1" transform="translate(1781.737 -28.886)"/></clipPath><style>.close-ic-1{fill:#474e5f}</style></defs><g transform="translate(-1781.737 28.886)"><path d="M14.16 13.241l4.594-4.594a.65.65 0 0 0-.919-.919l-4.594 4.594-4.593-4.51a.65.65 0 0 0-.919.919l4.594 4.594-4.594 4.593a.655.655 0 0 0 0 .919.606.606 0 0 0 .835 0l4.594-4.594 4.594 4.594a.606.606 0 0 0 .835 0 .655.655 0 0 0 0-.919z" class="close-ic-1" transform="translate(1774.764 -36.234)"/></g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-content">
+                    <ul>
+                        <li><a href="{{ links.account }}">Minha Conta</a></li>
+                        <li><a href="" class="rastreio-link">Rastrear meu pedido</a></li>
+                        <li><a href="{{ links.contact }}">Atendimento</a></li>
+                    </ul>
+                    <div class="tray-hide" data-logged-user="false">
+                        <a href="{{ links.login }}" class="button login large">Entrar</a>
+                        <div class="second-content">
+                            <div class="text">Ainda n�o possui uma conta conosco?</div>
+                            <a class="button large" href="{{ links.register }}">cadastre-se aqui</a>
+                        </div>
+                    </div>
+                    <div class="user-logged tray-hide" data-logged-user="true">
+                        <a href="{{ links.logout }}" class="button login large">Sair</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rastreio-block">
+
+                <div class="header-rastreio flex align-center">
+
+                    <div class="area-close-back">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                            <defs><clipPath><path fill="#fff" d="M0 0H14V14H0z"/></clipPath></defs><g><path fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.487px" d="M14.871 17.845L8.923 11.9l5.948-5.948" transform="translate(-5.051 -4.897)"/></g>
+                        </svg>
+                    </div>
+                    <span class="text">Voltar</span>
+                </div>
+
+                <div class="sub-header-rastreio flex align-center">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="40" viewBox="0 0 52 40">
+                            <defs><clipPath><path d="M0 0H52V40H0z" class="truck-ic-blue-1" transform="translate(267 5947)"/></clipPath><style>.truck-ic-blue-1{fill:#000000}</style></defs><g transform="translate(-267 -5947)"><path d="M48.1 13.158l-7.608-7.613a1.42 1.42 0 0 0-1.005-.416H33.3v-2.9A5.234 5.234 0 0 0 28.067-3H5.228A5.234 5.234 0 0 0 0 2.228V24.06a5.233 5.233 0 0 0 5.228 5.227h1.005a7.132 7.132 0 0 0 13.977 0h8.1a7.132 7.132 0 0 0 13.978 0H47.1a1.421 1.421 0 0 0 1.422-1.422v-13.7a1.42 1.42 0 0 0-.416-1.005zm-9.2-5.186l4.77 4.77H33.3v-4.77zM2.843 24.06V2.228A2.388 2.388 0 0 1 5.228-.157h22.839a2.388 2.388 0 0 1 2.385 2.385v20.415a7.129 7.129 0 0 0-2.141 3.8h-8.1a7.132 7.132 0 0 0-13.977 0H5.228a2.387 2.387 0 0 1-2.385-2.383zm10.379 8.095a4.289 4.289 0 1 1 4.288-4.289 4.293 4.293 0 0 1-4.288 4.289zm22.078 0a4.289 4.289 0 1 1 4.288-4.289 4.294 4.294 0 0 1-4.288 4.289zm6.989-5.711a7.126 7.126 0 0 0-8.989-5.42v-5.439h12.378v10.86h-3.39zm0 0" class="truck-ic-blue-1" transform="translate(269.001 5950.863)"/></g>
+                        </svg>
+                    </div>
+                    <span class="text">Rastreie seu pedido</span>
+                </div>
+
+
+                <div class="rastreio-content">
+                    {% element 'snippets/correios' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="shadow-cart"></div>

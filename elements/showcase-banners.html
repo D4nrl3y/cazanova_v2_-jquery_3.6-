@@ -1,0 +1,21 @@
+<div class="section section-mosaic">
+    <h2 class="title-section">Seu ambiente<span class="small"> na medida certa</span></h2>
+    {% if not utils.is_mobile %}
+    <div class="area-banners">
+        {% for banner in banners.extra2.slides %}
+        <a href="{{ banner.link }}" target="{{ banner.target }}" class="image">
+            <img class="lazyload" src="{{ image }}" data-src="{{ banner.image }}" alt="{{ banner.alt }}">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if utils.is_mobile %}
+    <div class="list-line">
+        {% for banner in banners.extra4.slides %}
+        <a href="{{ banner.link }}" target="{{ banner.target }}" class="image" style="--padding: {{ (banner.height / banner.width) * 100 }}%; max-width: {{ banner.width }}px;">
+            <img class="lazyload" src="{{ image }}" data-src="{{ banner.image }}" alt="{{ banner.alt }}">
+        </a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

@@ -1,0 +1,77 @@
+{% set bannerActive = utils.is_mobile ? banners.bottom : banners.title %}
+<div class="wrap-catalog">
+    <div class="container">
+        {% set breadcrumb = [
+            {
+                'link': store.current_url,
+                'name': search.word ? search.word : 'Todos os produtos'
+            }
+        ] %}
+        {% element 'snippets/breadcrumb' {'list': breadcrumb } %}
+        {% element 'snippets/banner' {
+        'b': bannerActive,
+        'padding': false,
+        'lazy': false
+    }  %}</div>
+    <div class="catalog container flex">
+        {% element 'snippets/smart_filter' %}
+        <div class="list-catalog-area">
+        
+            <div class="title-section-catalog">
+                <h1 class="catalog-name">{{ search.word ? search.word : 'Todos os produtos' }}</h1>
+            </div>
+            
+            <div class="area-option filter-mob">
+                <div class="button filter-btn">                    
+                    <span>Filtrar por</span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+                            <defs><clipPath><rect width="12" height="12" transform="translate(-35 19.5)" fill="#004498"/></clipPath></defs><g transform="translate(35 -19.5)"><path d="M12,1.636H1.091L5.455,6.8v3.567l2.182,1.091V6.8Z" transform="translate(-35.545 18.955)" fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.091"/></g>
+                        </svg>
+                    </span>
+                </div>
+                <div class="button order-btn">                    
+                    <span>Ordenar por</span>
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+                          <defs><clipPath><rect width="12" height="12" transform="translate(-35 19.5)" fill="#004498"/></clipPath></defs><g transform="translate(35 -19.5)" ><g transform="translate(-35.545 18.955)">      <rect data-name="Retângulo 1024" width="10.909" height="4.364" rx="1.091" transform="translate(1.091 1.091)" fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.091"/><rect data-name="Retângulo 1025" width="10.909" height="4.364" rx="1.091" transform="translate(1.091 7.636)" fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.091"/><line data-name="Linha 22" x2="0.005" transform="translate(3.273 3.273)" fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.091"/><line data-name="Linha 23" x2="0.005" transform="translate(3.273 9.818)" fill="none" stroke="#004498" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.091"/></g></g>
+                        </svg>
+                    </span>
+                </div>                
+            </div>
+
+            <div class="paginate-area">
+                <div class="area-option select-order">
+                    <span class="flex align-center order-title">
+                        <span class="icon icon-order">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20.003" height="21.055" viewBox="0 0 20.003 21.055">
+                                <defs><style>.order-ic-1{fill:#02435d;stroke:transparent}</style></defs><g transform="translate(.5 .5)"><path d="M446.156 326.148v-.29-15.99a2.556 2.556 0 0 1 .008-.29.794.794 0 0 1 1.574-.018 2.312 2.312 0 0 1 .014.309v16.29c.092-.087.142-.133.19-.181l1.613-1.6a.765.765 0 0 1 .823-.2.754.754 0 0 1 .538.651.809.809 0 0 1-.276.712q-1.38 1.369-2.756 2.741c-.119.119-.237.24-.36.355a.788.788 0 0 1-1.15-.009q-1.574-1.559-3.142-3.125a.779.779 0 0 1 0-1.142.8.8 0 0 1 1.136.027q.8.792 1.6 1.588c.046.045.097.089.188.172z" class="order-ic-1" transform="translate(-442.982 -308.878)"/><path d="M611.708 355.161h-4.516a.886.886 0 0 1-.962-.656.811.811 0 0 1 .781-.919 3.686 3.686 0 0 1 .379-.012h8.764c.584 0 .988.295 1.018.733.033.482-.366.847-.948.85-1.021.006-2.042 0-3.063 0h-1.453z" class="order-ic-1" transform="translate(-598.178 -349.496)"/><path d="M611.676 436.908h-4.515c-.655 0-1.083-.469-.925-1a.845.845 0 0 1 .738-.57 4.507 4.507 0 0 1 .491-.016h8.673c.555 0 .938.251 1.014.651a.834.834 0 0 1-.915.928c-.961.007-1.922 0-2.883 0h-1.677z" class="order-ic-1" transform="translate(-598.165 -428.078)"/><path d="M610.307 516.978h3.129a.87.87 0 0 1 .974.794c0 .453-.408.789-.978.79h-6.258c-.676 0-1.112-.462-.953-.994a.9.9 0 0 1 .912-.588c1.059-.004 2.117-.002 3.174-.002z" class="order-ic-1" transform="translate(-598.151 -506.565)"/></g>
+                            </svg>
+                        </span>
+                        Ordenar por:
+                    </span>
+                    {% element 'snippets/filter' %}
+                    <div class="select-button">
+                        <div class="list">
+    
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="content-products">
+                {% if products|length > 0 %}
+                {% element 'showcase-catalog' {
+                    "products": products
+                } %}
+              
+               
+                {% element 'snippets/paginate' %}
+              
+                {% else %}
+                <div class="error">Nenhum produto encontrado</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

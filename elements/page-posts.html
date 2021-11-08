@@ -1,0 +1,14 @@
+<div class="container">
+    {% element 'snippets/breadcrumb' { "list": 
+    [
+        {
+            "name": "Blog",
+            "link": store.url ~ "/noticias"
+        }
+    ]
+    } %}
+    <div class="area-page-contact">
+        <div class="area-title"><div class="left-text"><div><h1 class="title-section">Dicas e notícias para você!</h1><p class="desc">Informações, dicas e muito mais! Aprenda a posicionar e divulgar sua marca!</p></div></div></div>
+        {{ content_for_layout }}
+    </div>
+</div>

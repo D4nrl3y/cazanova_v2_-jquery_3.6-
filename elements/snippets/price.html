@@ -1,0 +1,19 @@
+<div class="area-price">
+    <span class="box-price">
+        {% if (product.stock > 0 or settings.without_stock_sale) and not product.upon_request %}
+            {% if product.price_offer > 0 %}
+            <span class="before">{{ settings.currency ~ ' ' ~ product.price|currency }}</span>
+            {% endif %}
+            <span class="after-featured">{{ settings.currency }} {{ product.price_offer > 0 ? product.price_offer|currency : product.price|currency }}</span>
+        {% elseif product.upon_request %}
+        <span class="text">Sob consulta</span>
+        {% else %}
+        <span class="text">Indispon&iacute;vel</span>
+        {% endif %}
+    </span>
+    {% if product.payment %}
+    <div class="payment">
+        {{ product.payment }}
+    </div>
+    {% endif %}
+</div>

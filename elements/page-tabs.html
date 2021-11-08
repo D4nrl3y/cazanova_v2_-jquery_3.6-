@@ -1,0 +1,47 @@
+{% set pageContent = '' %}
+{% for page in pages.custom %}
+    {% set text = page.slug %}
+    {% if text == pages.current %}
+    {% set pageContent = page %}
+    {% endif %}
+{% endfor %}
+
+{% set pagesList = [] %}
+
+
+<div class="container">
+    {% element 'snippets/breadcrumb' { "list": 
+[
+    {
+        "name": pageContent.name,
+        "link": store.current_url
+    }
+]
+} %}
+</div> 
+<div class="page-list">
+    <div class="container flex justify-between">        
+        <div class="column-tab">
+            <div class="blue-bg">
+                <div class="title-tabs">CAZANOVA</div>
+                <ul class="list-tab">
+                   {#  <li><a href="/trocas-devolucoes" class="{{ pages.current == 'trocas-devolucoes' ? 'active' }}">Trocas e Devoluções</a></li>
+                    <li><a href="/privacidade" class="{{ pages.current == 'privacidade' ? 'active' }}">Política de privacidade</a></li>
+                    <li><a href="/termos-uso" class="{{ pages.current == 'termos-uso' ? 'active' }}">Termos de uso</a></li> #}
+                    {% for list in pages.custom %}
+                        {% if list.slug != "noticias" %}
+                            <li><a class="{{ list.id == pageContent.id ? 'active' }}" href="{{ list.url }}">{{ list.name }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="page-tab-content">
+            <h1 class="title-page">{{ pageContent.name }}</h1>
+            <div class="board_htm">
+                {{ pageContent.conteudo }}
+            </div>
+                
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+{% set bannerList = attribute(banners, i) %}
+{% set bannerListmob = attribute(banners, mob) %}
+
+{% if bannerList %}
+    {% if bannerList.slides %}
+        {% set bannerFor = [] %}
+        {% for bannerTo in bannerList.slides %}
+            {% set bannerFor = bannerFor|merge([{
+                "src": bannerTo.image,
+                "link": bannerTo.link,
+                "alt": bannerTo.label,
+                "target": bannerTo.target,
+                "width": bannerTo.width,
+                "height": bannerTo.height
+            }]) %}
+        {% endfor %}
+        {% set bannerList = bannerFor %}
+    {% else %}
+        {% set bannerList = [bannerList] %}
+    {% endif %}
+{% endif %}
+
+{% if bannerListmob and utils.is_mobile %}
+    {% if bannerListmob.slides %}
+        {% set bannerFor = [] %}
+        {% for bannerTo in bannerListmob.slides %}
+            {% set bannerFor = bannerFor|merge([{
+                "src": bannerTo.image,
+                "link": bannerTo.link,
+                "alt": bannerTo.label,
+                "target": bannerTo.target,
+                "width": bannerTo.width,
+                "height": bannerTo.height
+            }]) %}
+        {% endfor %}
+        {% set bannerList = bannerFor %}
+    {% else %}
+        {% set bannerList = [bannerListmob] %}
+    {% endif %}
+{% endif %}
+{% if bannerList %}
+    <div class="banner-extra">
+        {% for bannerItem in bannerList %}
+            <a{{ bannerItem.link ? ' href="'~bannerItem.link~'" ' }} target="{{ bannerItem.target }}" style="padding-bottom: {{ (bannerItem.height / bannerItem.width) * 100 }}%">
+                <img class="lazyload" src="{{ image }}" data-src="{{ bannerItem.src }}" alt="{{ bannerItem.alt }}">
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}

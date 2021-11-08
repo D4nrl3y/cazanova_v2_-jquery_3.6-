@@ -1,0 +1,180 @@
+<form name="form-filter" method="get" class="smart-filter">
+    <div class="filter-title">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+            <defs><clipPath id="nk754z4z5a"><path fill="#474e5f" d="M0 0H14V14H0z"/></clipPath></defs><g><path fill="none" stroke="#c5c6c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4px" d="M18.659 5.348l-5.823 5.823L18.659 17" transform="translate(-8.92 -4.172)"/></g>
+        </svg>
+        <span>Filtrar por</span>
+    </div>
+    <input type="hidden" name="loja" value="{{ store.id }}">
+    {% if search.word %}
+    <input name="palavra_busca" type="hidden" value="{{ search.word }}">
+    {% endif %}
+
+    {% if category.id %}
+    <input type="hidden" name="categoria" value="{{ category.id }}">
+    {% endif %}
+    <div class="over-area">
+
+    {% set listCategory = Categories({'id': category.id}) %}
+    {% if listCategory.children %}
+    <div class="filter__block filter__block--categories">
+        
+        <div class="filter__title">Categorias</div>
+        
+        <ul class="filter__list">
+            {% for list in listCategory.children %}
+      
+            <li class="filter__item">
+                <a href="{{ list.link }}">                    
+                    <span>{{ list.name }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+        {#
+    {% if filter_options.categories %}
+    <div class="filter__block filter__block--categories">
+        <div class="filter__title">Categorias</div>
+        <ul class="filter__list">
+            {% for category in filter_options.categories %}
+            {% set category_applied = category.key in filtered_options.categories ? true : false %}
+
+            <li class="filter__item">
+                <input id="{{ category.key }}" class="filter__input filter__input--category" type="checkbox"
+                    name="categories[]" value="{{ category.key|convert_encoding('UTF-8', 'ISO-8859-1') }}"
+                    {{ category_applied ? 'checked' }}>
+                <label class="filter__label" for="{{ category.key }}">
+                    <span class="filter__name filter__name--category">{{ category.key }}</span>
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    #}
+
+    {% if filter_options.brands %}
+    <div class="filter__block filter__block--brands">
+        <div tabindex="0" role="button" class="filter__title over ">Marcas</div>
+
+        <ul class="filter__list">
+            {% for brand in filter_options.brands %}
+            {% set brands_applied = brand.key in filtered_options.brand ? true : false %}
+
+            <li class="filter__item">
+                <input id="{{ brand.key }}" class="filter__input filter__input--brand" type="checkbox"
+                    name="brands[]" value="{{ brand.key|convert_encoding('UTF-8', 'ISO-8859-1') }}"
+                    {{ brands_applied ? 'checked'}}>
+                <label class="filter__label" for="{{ brand.key }}">
+                    <span class="filter__name filter__name--brand">{{ brand.key }}</span>
+                    <span class="filter__text filter__text--count">({{ brand.doc_count }})</span>
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+      
+    </div>
+    {% endif %}
+    {% if filter_options.prices %}
+    <div class="filter__block filter__block--prices">
+        <div class="filter__title over" tabindex="0" role="button">Preço</div>
+        <ul class="filter__list">
+            {% for price in filter_options.prices.buckets %}
+            {% set price_applied = false %}
+
+            <li class="filter__item">
+                {% for price_apply in filtered_options.price %}
+                {% set price_applied = price.from and price.to in price_apply ? true : false %}
+                {% endfor %}
+
+                <input id="{{ price.from }}-{{ price.to }}" class="filter__input filter__input--price"
+                    type="checkbox" name="prices[]" value="{{ price.from }},{{ price.to }}"
+                    {{ price_applied ? 'checked' }}>
+                <label class="filter__label" for="{{ price.from }}-{{ price.to }}">
+                    <span class="filter__name filter__name--price">
+                        {% if loop.index == 1 %}
+                            Até {{ settings.currency }} {{ price.to|currency }}
+                        {% elseif loop.index == filter_options.prices.buckets|length  %}
+                            Acima de {{ settings.currency }} {{ price.to|currency }}
+                        {% else %}
+                            De {{ settings.currency }} {{ price.from|currency }} à {{ settings.currency }}
+                            {{ price.to|currency }}
+                        {% endif %}
+                    </span>
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if filter_options.availability %}
+    <div class="filter__block filter__block--availability">
+        <div class="filter__title over" tabindex="0" role="button">Disponibilidade</div>
+
+        <ul class="filter__list">
+            {% for availability in filter_options.availability %}
+            {% set availability_applied = availability.key in filtered_options.availability ? true : false %}
+
+            <li class="filter__item">
+                <input id="{{ availability.key }}" class="filter__input filter__input--availability" type="checkbox"
+                    name="availability[]" value="{{ availability.key|convert_encoding('UTF-8', 'ISO-8859-1')}}"
+                    {{ availability_applied ? 'checked' }}>
+                <label class="filter__label" for="{{ availability.key }}">
+                    <span class="filter__name filter__name--availability">{{ availability.key }}</span>
+                    <span class="filter__text filter__text--count">({{ availability.doc_count }})</span>
+                </label>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+
+
+    {% if filter_options.properties %}
+        {% for properties in filter_options.properties %}
+            {% for prop in properties %}
+            <div class="filter__block filter__block--properties">
+                <div class="filter__title over ">{{ prop.key }}</div>
+                <ul class="filter__list">
+                    {% for item in prop.values %}
+
+                    {% set filter_prop = prop.key ~'||'~ item.key %}
+                    {% if item.entity == 'variants' %}
+                        {% set prop_applied = filter_prop|convert_encoding('UTF-8', 'ISO-8859-1') in filtered_options.variant ? true : false %}
+                    {% else %}
+                        {% set prop_applied = filter_prop|convert_encoding('UTF-8', 'ISO-8859-1') in filtered_options.propertie ? true : false %}
+                    {% endif %}
+
+                    <li class="filter__item">
+                        <input id="{{ item.key }}" class="filter__input filter__input--propertie" type="checkbox"
+                            name="{{item.entity}}[]" value="{{ filter_prop|convert_encoding('UTF-8', 'ISO-8859-1') }}"
+                            {{ prop_applied ? 'checked'}}>
+                        <label class="filter__label" for="{{ item.key }}">
+                            <span class="filter__name filter__name--propertie">{{ item.key }}</span>
+                            <span class="filter__text filter__text--count">({{ item.doc_count }})</span>
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endfor %}
+
+        {% endfor %}
+    {% endif %}
+    </div>
+    <div class="bar-filter-button">
+        {% if pages.current == 'catalog' %}
+            <a href="/{{ category.slug }}" class="button" role="button" tabindex="0">Remover filtros</a>
+        {% else %}
+            <a href="/loja/busca.php?loja=797581&palavra_busca={{ search.word|url_encode }}" class="button" role="button" tabindex="0">Limpar filtros</a>
+        {% endif %}
+            <button class="button" role="button" tabindex="0">Aplicar filtros</button>
+        <div class="button close-filter" role="button" tabindex="0">Cancelar</div>
+    </div>
+    <div class="sha"></div>
+</form>
